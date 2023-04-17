@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import "./fonts.css";
+import { useState } from "react";
+import Poem from "./components/Poem";
+import PoemsList from "./components/PoemsList";
+import { poems } from "./poems/poems";
 
 function App() {
+  const [selectedPoem, setSelectedPoem] = useState(poems[0]);
+
+  const handlePoemSelect = (index) => {
+    setSelectedPoem(poems[index]);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="main-container">
+      <h1 className="main-title">Ricardo Domínguez</h1>
+      <div className="content">
+        <nav className="poem-navbar">
+          <PoemsList poems={poems} handlePoemSelect={handlePoemSelect} />
+        </nav>
+
+        <Poem title={selectedPoem.title} text={selectedPoem.text} />
+      </div>
     </div>
   );
 }
