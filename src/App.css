@@ -32,8 +32,10 @@ pre {
 /* General */
 
 .main-container {
-  width: 40em;
+  display: flex;
+  flex-direction: column;
   margin: 3em auto;
+  max-width: 40em;
 }
 
 .main-title {
@@ -119,11 +121,5 @@ pre {
   }
   .verse {
     font-size: 0.75rem;
-  }
-}
-
-@media (max-width: 800px) {
-  .main-container {
-    margin-left: 20px;
   }
 }
