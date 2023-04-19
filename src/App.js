@@ -1,23 +1,90 @@
 import "./App.css";
 import "./fonts.css";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Poem from "./components/Poem";
 import PoemsList from "./components/PoemsList";
 import { poems } from "./poems/poems";
+import WheelReact from "wheel-react";
+import SwipeReact from "swipe-react";
 
 function App() {
-  const [selectedPoem, setSelectedPoem] = useState(poems[0]);
+  const [selectedPoemIndex, setSelectedPoemIndex] = useState(0);
+  const selectedPoem = poems[selectedPoemIndex];
+  const poemContainerRef = useRef(null);
+
+  useEffect(() => {
+    document.addEventListener("keydown", detectKeyDown, true);
+  }, []);
+
+  // WheelReact.config({
+  //   up: () => {
+  //     if (poemContainerRef.current) {
+  //       setSelectedPoemIndex((prevIndex) =>
+  //         prevIndex === poems.length - 1 ? prevIndex : prevIndex + 1
+  //       );
+  //     }
+  //   },
+  //   down: () => {
+  //     if (poemContainerRef.current) {
+  //       setSelectedPoemIndex((prevIndex) =>
+  //         prevIndex === 0 ? prevIndex : prevIndex - 1
+  //       );
+  //     }
+  //   },
+  //   target: poemContainerRef.current,
+  // });
+
+  SwipeReact.config({
+    left: () => {
+      if (poemContainerRef.current) {
+        setSelectedPoemIndex((prevIndex) =>
+          prevIndex === poems.length - 1 ? prevIndex : prevIndex + 1
+        );
+      }
+      console.log("Swipe left detected.");
+    },
+    right: () => {
+      if (poemContainerRef.current) {
+        setSelectedPoemIndex((prevIndex) =>
+          prevIndex === 0 ? prevIndex : prevIndex - 1
+        );
+      }
+      console.log("Swipe right detected.");
+    },
+  });
+
+  const detectKeyDown = (e) => {
+    e.preventDefault();
+    if (e.keyCode === 38) {
+      // up arrow
+      setSelectedPoemIndex((prevIndex) =>
+        prevIndex === 0 ? prevIndex : prevIndex - 1
+      );
+    } else if (e.keyCode === 40) {
+      // down arrow
+      setSelectedPoemIndex((prevIndex) =>
+        prevIndex === poems.length - 1 ? prevIndex : prevIndex + 1
+      );
+    }
+  };
 
   const handlePoemSelect = (index) => {
-    setSelectedPoem(poems[index]);
+    setSelectedPoemIndex(index);
   };
 
   return (
-    <div className="main-container">
+    <div
+      className="main-container"
+      {...WheelReact.events}
+      {...SwipeReact.events}>
       <h1 className="main-title">Ricardo Domínguez</h1>
-      <div className="content">
+      <div className="content" ref={poemContainerRef} tabIndex={0}>
         <nav className="poem-navbar">
-          <PoemsList poems={poems} handlePoemSelect={handlePoemSelect} />
+          <PoemsList
+            poems={poems}
+            handlePoemSelect={handlePoemSelect}
+            selectedPoemIndex={selectedPoemIndex}
+          />
         </nav>
 
         <Poem title={selectedPoem.title} text={selectedPoem.text} />
