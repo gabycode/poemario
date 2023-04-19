@@ -5,6 +5,7 @@ const Poem = ({ title, text }) => {
       <div
         className="poem-verse"
         dangerouslySetInnerHTML={{ __html: text }}></div>
+      <div className="gradient"></div>
     </div>
   );
 };
