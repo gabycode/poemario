@@ -1,6 +1,6 @@
-const Poem = ({ title, text }) => {
+const Poem = ({ title, text, poemContainerRef }) => {
   return (
-    <div className="poem">
+    <div className="poem" ref={poemContainerRef}>
       <h2 className="poem-title">{title}</h2>
       <div
         className="poem-verse"
