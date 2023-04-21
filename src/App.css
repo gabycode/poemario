@@ -82,7 +82,8 @@ pre {
   margin-left: 50px;
   position: relative;
   overflow-y: scroll;
-  height: 670px;
+  height: 760px;
+  min-height: 200px;
 }
 
 .poem::-webkit-scrollbar {
@@ -162,7 +163,7 @@ pre {
   }
   .poem {
     margin-left: 10px;
-    height: 600px;
+    height: 700px;
   }
   .poem-title {
     font-size: 1.3rem;
