@@ -16,19 +16,65 @@ function App() {
     document.addEventListener("keydown", detectKeyDown, true);
   }, []);
 
+  const [prevScrollTop, setPrevScrollTop] = useState(0);
+
   // WheelReact.config({
   //   up: () => {
   //     if (poemContainerRef.current) {
-  //       setSelectedPoemIndex((prevIndex) =>
-  //         prevIndex === poems.length - 1 ? prevIndex : prevIndex + 1
-  //       );
+  //       requestAnimationFrame(() => {
+  //         const container = poemContainerRef.current;
+  //         const containerHeight = Math.min(
+  //           container.clientHeight,
+  //           container.offsetHeight,
+  //           200
+  //         );
+  //         const scrollHeight = container.scrollHeight;
+  //         const scrollTop = container.scrollTop;
+
+  //         if (scrollTop === 0) {
+  //           setSelectedPoemIndex((prevIndex) =>
+  //             prevIndex === poems.length - 1 ? prevIndex : prevIndex + 1
+  //           );
+  //         } else if (scrollTop < prevScrollTop) {
+  //           const diff = prevScrollTop - scrollTop;
+  //           const threshold = containerHeight / 2;
+  //           if (diff >= threshold) {
+  //             setSelectedPoemIndex((prevIndex) =>
+  //               prevIndex === poems.length - 1 ? prevIndex : prevIndex + 1
+  //             );
+  //           }
+  //         }
+  //         setPrevScrollTop(scrollTop);
+  //       });
   //     }
   //   },
   //   down: () => {
   //     if (poemContainerRef.current) {
-  //       setSelectedPoemIndex((prevIndex) =>
-  //         prevIndex === 0 ? prevIndex : prevIndex - 1
-  //       );
+  //       requestAnimationFrame(() => {
+  //         const container = poemContainerRef.current;
+  //         const containerHeight = Math.min(
+  //           container.clientHeight,
+  //           container.offsetHeight,
+  //           200
+  //         );
+  //         const scrollHeight = container.scrollHeight;
+  //         const scrollTop = container.scrollTop;
+
+  //         if (scrollTop + containerHeight === scrollHeight) {
+  //           setSelectedPoemIndex((prevIndex) =>
+  //             prevIndex === 0 ? prevIndex : prevIndex - 1
+  //           );
+  //         } else if (scrollTop > prevScrollTop) {
+  //           const diff = scrollTop - prevScrollTop;
+  //           const threshold = containerHeight / 2;
+  //           if (diff >= threshold) {
+  //             setSelectedPoemIndex((prevIndex) =>
+  //               prevIndex === 0 ? prevIndex : prevIndex - 1
+  //             );
+  //           }
+  //         }
+  //         setPrevScrollTop(scrollTop);
+  //       });
   //     }
   //   },
   //   target: poemContainerRef.current,
@@ -41,7 +87,6 @@ function App() {
           prevIndex === poems.length - 1 ? prevIndex : prevIndex + 1
         );
       }
-      console.log("Swipe left detected.");
     },
     right: () => {
       if (poemContainerRef.current) {
@@ -49,7 +94,6 @@ function App() {
           prevIndex === 0 ? prevIndex : prevIndex - 1
         );
       }
-      console.log("Swipe right detected.");
     },
   });
 
@@ -78,7 +122,7 @@ function App() {
       {...WheelReact.events}
       {...SwipeReact.events}>
       <h1 className="main-title">Ricardo Domínguez</h1>
-      <div className="content" ref={poemContainerRef} tabIndex={0}>
+      <div className="content" tabIndex={0}>
         <nav className="poem-navbar">
           <PoemsList
             poems={poems}
@@ -87,7 +131,11 @@ function App() {
           />
         </nav>
 
-        <Poem title={selectedPoem.title} text={selectedPoem.text} />
+        <Poem
+          title={selectedPoem.title}
+          text={selectedPoem.text}
+          poemContainerRef={poemContainerRef}
+        />
       </div>
     </div>
   );
