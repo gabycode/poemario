@@ -92,6 +92,20 @@ pre {
   background-color: transparent;
 }
 
+/* .gradient-top {
+  position: sticky;
+  z-index: 2;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 160px;
+  background: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 1) 70%
+  );
+} */
+
 .gradient {
   position: sticky;
   z-index: 2;
@@ -127,14 +141,17 @@ pre {
 }
 
 .poem-title {
-  margin-bottom: 30px;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  padding: 0.5em 0;
 }
 
 .poem-verse {
   font-size: 1.25rem;
   line-height: 2;
   max-width: 800px;
-  margin: 0 auto;
+  margin: 1em auto;
 }
 
 .verse {
