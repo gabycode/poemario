@@ -16,65 +16,34 @@ function App() {
     document.addEventListener("keydown", detectKeyDown, true);
   }, []);
 
-  const [prevScrollTop, setPrevScrollTop] = useState(0);
-
   // WheelReact.config({
   //   up: () => {
   //     if (poemContainerRef.current) {
-  //       requestAnimationFrame(() => {
-  //         const container = poemContainerRef.current;
-  //         const containerHeight = Math.min(
-  //           container.clientHeight,
-  //           container.offsetHeight,
-  //           200
-  //         );
-  //         const scrollHeight = container.scrollHeight;
-  //         const scrollTop = container.scrollTop;
+  //       const container = poemContainerRef.current;
+  //       const containerHeight = container.clientHeight;
+  //       const scrollTop = container.scrollTop;
 
-  //         if (scrollTop === 0) {
-  //           setSelectedPoemIndex((prevIndex) =>
-  //             prevIndex === poems.length - 1 ? prevIndex : prevIndex + 1
-  //           );
-  //         } else if (scrollTop < prevScrollTop) {
-  //           const diff = prevScrollTop - scrollTop;
-  //           const threshold = containerHeight / 2;
-  //           if (diff >= threshold) {
-  //             setSelectedPoemIndex((prevIndex) =>
-  //               prevIndex === poems.length - 1 ? prevIndex : prevIndex + 1
-  //             );
-  //           }
-  //         }
-  //         setPrevScrollTop(scrollTop);
-  //       });
+  //       if (scrollTop === 0) {
+  //         setSelectedPoemIndex((prevIndex) =>
+  //           prevIndex === 0 ? prevIndex : prevIndex + 1
+  //         );
+  //         container.scrollTop = container.scrollHeight - containerHeight;
+  //       }
   //     }
   //   },
   //   down: () => {
   //     if (poemContainerRef.current) {
-  //       requestAnimationFrame(() => {
-  //         const container = poemContainerRef.current;
-  //         const containerHeight = Math.min(
-  //           container.clientHeight,
-  //           container.offsetHeight,
-  //           200
-  //         );
-  //         const scrollHeight = container.scrollHeight;
-  //         const scrollTop = container.scrollTop;
+  //       const container = poemContainerRef.current;
+  //       const containerHeight = container.clientHeight;
+  //       const scrollHeight = container.scrollHeight;
+  //       const scrollTop = container.scrollTop;
 
-  //         if (scrollTop + containerHeight === scrollHeight) {
-  //           setSelectedPoemIndex((prevIndex) =>
-  //             prevIndex === 0 ? prevIndex : prevIndex - 1
-  //           );
-  //         } else if (scrollTop > prevScrollTop) {
-  //           const diff = scrollTop - prevScrollTop;
-  //           const threshold = containerHeight / 2;
-  //           if (diff >= threshold) {
-  //             setSelectedPoemIndex((prevIndex) =>
-  //               prevIndex === 0 ? prevIndex : prevIndex - 1
-  //             );
-  //           }
-  //         }
-  //         setPrevScrollTop(scrollTop);
-  //       });
+  //       if (scrollTop + containerHeight === scrollHeight) {
+  //         setSelectedPoemIndex((prevIndex) =>
+  //           prevIndex === poems.length - 1 ? prevIndex : prevIndex - 1
+  //         );
+  //         container.scrollTop = 0;
+  //       }
   //     }
   //   },
   //   target: poemContainerRef.current,
