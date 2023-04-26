@@ -8,46 +8,21 @@ import WheelReact from "wheel-react";
 import SwipeReact from "swipe-react";
 
 function App() {
-  const [selectedPoemIndex, setSelectedPoemIndex] = useState(0);
+  const [selectedPoemIndex, setSelectedPoemIndex] = useState(null);
   const selectedPoem = poems[selectedPoemIndex];
   const poemContainerRef = useRef(null);
+  const [isRendered, setIsRendered] = useState(true);
+  const [isPoemSelected, setIsPoemSelected] = useState(false);
 
   useEffect(() => {
     document.addEventListener("keydown", detectKeyDown, true);
   }, []);
 
-  // WheelReact.config({
-  //   up: () => {
-  //     if (poemContainerRef.current) {
-  //       const container = poemContainerRef.current;
-  //       const containerHeight = container.clientHeight;
-  //       const scrollTop = container.scrollTop;
-
-  //       if (scrollTop === 0) {
-  //         setSelectedPoemIndex((prevIndex) =>
-  //           prevIndex === 0 ? prevIndex : prevIndex + 1
-  //         );
-  //         container.scrollTop = container.scrollHeight - containerHeight;
-  //       }
-  //     }
-  //   },
-  //   down: () => {
-  //     if (poemContainerRef.current) {
-  //       const container = poemContainerRef.current;
-  //       const containerHeight = container.clientHeight;
-  //       const scrollHeight = container.scrollHeight;
-  //       const scrollTop = container.scrollTop;
-
-  //       if (scrollTop + containerHeight === scrollHeight) {
-  //         setSelectedPoemIndex((prevIndex) =>
-  //           prevIndex === poems.length - 1 ? prevIndex : prevIndex - 1
-  //         );
-  //         container.scrollTop = 0;
-  //       }
-  //     }
-  //   },
-  //   target: poemContainerRef.current,
-  // });
+  useEffect(() => {
+    setTimeout(() => {
+      setIsRendered(false);
+    }, 5000);
+  }, []);
 
   SwipeReact.config({
     left: () => {
@@ -83,7 +58,16 @@ function App() {
 
   const handlePoemSelect = (index) => {
     setSelectedPoemIndex(index);
+    setIsPoemSelected(true);
   };
+
+  if (isRendered) {
+    return (
+      <div className="container">
+        <h1 className="intro">mi poemario</h1>
+      </div>
+    );
+  }
 
   return (
     <div
@@ -91,23 +75,65 @@ function App() {
       {...WheelReact.events}
       {...SwipeReact.events}>
       <h1 className="main-title">Ricardo Domínguez</h1>
-      <div className="content" tabIndex={0}>
+      <div className="content">
         <nav className="poem-navbar">
           <PoemsList
             poems={poems}
             handlePoemSelect={handlePoemSelect}
             selectedPoemIndex={selectedPoemIndex}
+            setIsPoemSelected={setIsPoemSelected}
           />
         </nav>
 
-        <Poem
-          title={selectedPoem.title}
-          text={selectedPoem.text}
-          poemContainerRef={poemContainerRef}
-        />
+        {isPoemSelected ? (
+          <Poem
+            title={selectedPoem.title}
+            text={selectedPoem.text}
+            poemContainerRef={poemContainerRef}
+          />
+        ) : (
+          <div className="select">
+            <h1 className="select-title">
+              Escoge un poema del menú a la izquierda
+            </h1>
+          </div>
+        )}
       </div>
     </div>
   );
 }
 
 export default App;
+
+// WheelReact.config({
+//   up: () => {
+//     if (poemContainerRef.current) {
+//       const container = poemContainerRef.current;
+//       const containerHeight = container.clientHeight;
+//       const scrollTop = container.scrollTop;
+
+//       if (scrollTop === 0) {
+//         setSelectedPoemIndex((prevIndex) =>
+//           prevIndex === 0 ? prevIndex : prevIndex + 1
+//         );
+//         container.scrollTop = container.scrollHeight - containerHeight;
+//       }
+//     }
+//   },
+//   down: () => {
+//     if (poemContainerRef.current) {
+//       const container = poemContainerRef.current;
+//       const containerHeight = container.clientHeight;
+//       const scrollHeight = container.scrollHeight;
+//       const scrollTop = container.scrollTop;
+
+//       if (scrollTop + containerHeight === scrollHeight) {
+//         setSelectedPoemIndex((prevIndex) =>
+//           prevIndex === poems.length - 1 ? prevIndex : prevIndex - 1
+//         );
+//         container.scrollTop = 0;
+//       }
+//     }
+//   },
+//   target: poemContainerRef.current,
+// });
