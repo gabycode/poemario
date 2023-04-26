@@ -1,7 +1,8 @@
 :root {
-  --neutral-color-200: #cccccc;
-  --neutral-color-500: #808080;
-  --neutral-color-700: #4d4d4d;
+  --primary-color: #2c3639;
+  --neutral-color-200: #f8bb5f;
+  --neutral-color-500: #fef1df;
+  --neutral-color-700: #a4a4a4;
 }
 
 * {
@@ -11,6 +12,13 @@
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* IE 10+ */
   user-select: none; /* Standard syntax */
+  -ms-overflow-style: none; /* Hide Scrollbar for IE and Edge*/
+  scrollbar-width: none; /* Hide Scrollbar for Firefox*/
+  background-color: var(--primary-color);
+}
+
+*::-webkit-scrollbar {
+  display: none;
 }
 
 /* Element tags */
@@ -33,6 +41,27 @@ pre {
   font-family: "Source Serif Pro", sans-serif;
 }
 
+/* container for intro text */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  animation: fade 4s;
+  opacity: 0;
+}
+
+.intro {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+@keyframes fade {
+  50% {
+    opacity: 1;
+  }
+}
+
 /* General */
 
 .main-container {
@@ -40,11 +69,22 @@ pre {
   flex-direction: column;
   margin: 3em auto;
   max-width: 40em;
+  animation: fadein 2s;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .main-title {
   margin-left: 100px;
   margin-bottom: 30px;
+  font-weight: 700;
 }
 
 .content {
@@ -59,13 +99,14 @@ pre {
 }
 
 .poem-number {
+  font-family: "Roboto Slab", sans-serif;
   width: 100%;
+  font-weight: 200;
   font-size: 1.25rem;
   text-decoration: none;
   display: block;
   text-align: center;
-  color: var(--neutral-color-200);
-  background-color: white;
+  color: var(--neutral-color-500);
   border: none;
   margin-bottom: 5px;
   transition: all 300ms;
@@ -75,10 +116,11 @@ pre {
 .poem-number:hover,
 .poem-number.active {
   font-weight: 700;
-  color: var(--neutral-color-700) !important;
+  color: var(--neutral-color-200);
 }
 
-.poem {
+.poem,
+.select {
   margin-left: 50px;
   position: relative;
   overflow-y: scroll;
@@ -86,7 +128,13 @@ pre {
   min-height: 200px;
 }
 
-.poem::-webkit-scrollbar {
+.poem::-webkit-scrollbar,
+.select::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  background-color: transparent;
+}
+.poem-verse::-webkit-scrollbar {
   width: 0;
   height: 0;
   background-color: transparent;
@@ -98,7 +146,7 @@ pre {
   right: 0;
   bottom: 0;
   left: 0;
-  height: 160px;
+  height: 10px;
   background: linear-gradient(
     to top,
     rgba(255, 255, 255, 0) 0%,
@@ -116,35 +164,40 @@ pre {
   background: -moz-linear-gradient(
     top,
     rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 1) 70%
+    rgba(44, 54, 57, 1) 70%
   );
   background: -webkit-linear-gradient(
     top,
     rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 1) 70%
+    rgba(44, 54, 57, 1) 70%
   );
   background: -o-linear-gradient(
     top,
     rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 1) 70%
+    rgba(44, 54, 57, 1) 70%
   );
   background: -ms-linear-gradient(
     top,
     rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 1) 70%
+    rgba(44, 54, 57, 1) 70%
   );
   background: linear-gradient(
     to bottom,
     rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 1) 70%
+    rgba(44, 54, 57, 1) 70%
   );
 }
 
-.poem-title {
+.poem-title,
+.select-title {
   position: sticky;
+  font-weight: 700;
   top: 0;
-  background-color: white;
-  padding: 0.5em 0;
+  padding: 0 0 0.5em;
+}
+
+.select-title {
+  font-size: 20px;
 }
 
 .poem-verse {
@@ -155,7 +208,7 @@ pre {
 }
 
 .verse {
-  font-family: "Source Serif Pro", sans-serif;
+  font-family: "Roboto Slab", sans-serif;
   color: var(--neutral-color-500);
   transition: all 300ms;
   cursor: pointer;
