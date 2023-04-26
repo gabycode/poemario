@@ -1,6 +1,8 @@
-const Poem = ({ title, text, poemContainerRef }) => {
+const Poem = ({ title, text, poemContainerRef, poemChanged }) => {
   return (
-    <div className="poem" ref={poemContainerRef}>
+    <div
+      className={`poem ${poemChanged ? "fadein" : ""}`}
+      ref={poemContainerRef}>
       <h2 className="poem-title">{title}</h2>
       <div className="gradient-top"></div>
       <div
