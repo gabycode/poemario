@@ -114,36 +114,3 @@ function App() {
 }
 
 export default App;
-
-// WheelReact.config({
-//   up: () => {
-//     if (poemContainerRef.current) {
-//       const container = poemContainerRef.current;
-//       const containerHeight = container.clientHeight;
-//       const scrollTop = container.scrollTop;
-
-//       if (scrollTop === 0) {
-//         setSelectedPoemIndex((prevIndex) =>
-//           prevIndex === 0 ? prevIndex : prevIndex + 1
-//         );
-//         container.scrollTop = container.scrollHeight - containerHeight;
-//       }
-//     }
-//   },
-//   down: () => {
-//     if (poemContainerRef.current) {
-//       const container = poemContainerRef.current;
-//       const containerHeight = container.clientHeight;
-//       const scrollHeight = container.scrollHeight;
-//       const scrollTop = container.scrollTop;
-
-//       if (scrollTop + containerHeight === scrollHeight) {
-//         setSelectedPoemIndex((prevIndex) =>
-//           prevIndex === poems.length - 1 ? prevIndex : prevIndex - 1
-//         );
-//         container.scrollTop = 0;
-//       }
-//     }
-//   },
-//   target: poemContainerRef.current,
-// });
