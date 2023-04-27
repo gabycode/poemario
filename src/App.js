@@ -6,6 +6,7 @@ import PoemsList from "./components/PoemsList";
 import { poems } from "./poems/poems";
 import WheelReact from "wheel-react";
 import SwipeReact from "swipe-react";
+import { CSSTransition, SwitchTransition } from "react-transition-group";
 
 function App() {
   const [selectedPoemIndex, setSelectedPoemIndex] = useState(null);
@@ -86,11 +87,20 @@ function App() {
         </nav>
 
         {isPoemSelected ? (
-          <Poem
-            title={selectedPoem.title}
-            text={selectedPoem.text}
-            poemContainerRef={poemContainerRef}
-          />
+          <SwitchTransition>
+            <CSSTransition
+              classNames="fade"
+              key={selectedPoemIndex}
+              addEndListener={(node, done) =>
+                node.addEventListener("transitionend", done, false)
+              }>
+              <Poem
+                title={selectedPoem.title}
+                text={selectedPoem.text}
+                poemContainerRef={poemContainerRef}
+              />
+            </CSSTransition>
+          </SwitchTransition>
         ) : (
           <div className="select">
             <h1 className="select-title">
