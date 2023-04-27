@@ -220,9 +220,30 @@ pre {
   color: var(--neutral-color-700) !important;
 }
 
+.fade-enter {
+  opacity: 0;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-enter-active {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+}
+.fade-enter-active,
+.fade-exit-active {
+  transition: opacity 1000ms;
+}
+
 @media (max-width: 435px) {
   .main-container {
     margin-left: 10px;
+  }
+
+  .select {
+    margin-left: 0;
   }
   .main-title {
     margin-left: 50px;
