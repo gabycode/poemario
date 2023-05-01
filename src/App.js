@@ -7,6 +7,7 @@ import { poems } from "./poems/poems";
 import WheelReact from "wheel-react";
 import SwipeReact from "swipe-react";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
+import Footer from "./components/Footer";
 
 function App() {
   const [selectedPoemIndex, setSelectedPoemIndex] = useState(null);
@@ -39,6 +40,20 @@ function App() {
           prevIndex === 0 ? prevIndex : prevIndex - 1
         );
       }
+    },
+  });
+
+  WheelReact.config({
+    up: () => {
+      const bottom =
+        poemContainerRef.scrollHeight - poemContainerRef.scrollTop ===
+        poemContainerRef.clientHeight;
+      if (bottom) {
+        console.log("wheel up detected.");
+      }
+    },
+    down: () => {
+      console.log("wheel down detected.");
     },
   });
 
@@ -109,6 +124,7 @@ function App() {
           </div>
         )}
       </div>
+      <Footer />
     </div>
   );
 }
