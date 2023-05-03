@@ -2,7 +2,7 @@ import "./App.css";
 import "./fonts.css";
 import { useEffect, useRef, useState } from "react";
 import Poem from "./components/Poem";
-import PoemsList from "./components/PoemsList";
+import PoemNav from "./components/PoemNav";
 import { poems } from "./poems/poems";
 import WheelReact from "wheel-react";
 import SwipeReact from "swipe-react";
@@ -93,7 +93,7 @@ function App() {
       <h1 className="main-title">Ricardo Domínguez</h1>
       <div className="content">
         <nav className="poem-navbar">
-          <PoemsList
+          <PoemNav
             poems={poems}
             handlePoemSelect={handlePoemSelect}
             selectedPoemIndex={selectedPoemIndex}
