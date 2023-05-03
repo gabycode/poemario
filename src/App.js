@@ -18,16 +18,18 @@ function App() {
 
   useEffect(() => {
     document.addEventListener("keydown", detectKeyDown, true);
-  }, []);
 
-  useEffect(() => {
     setTimeout(() => {
       setIsRendered(false);
     }, 5000);
   }, []);
+  useEffect(() => {
+    console.log(selectedPoemIndex);
+  }, [selectedPoemIndex]);
 
   SwipeReact.config({
     left: () => {
+      // setSelectedPoemIndex(null);
       if (poemContainerRef.current) {
         setSelectedPoemIndex((prevIndex) =>
           prevIndex === poems.length - 1 ? prevIndex : prevIndex + 1
@@ -35,6 +37,7 @@ function App() {
       }
     },
     right: () => {
+      // setSelectedPoemIndex(null);
       if (poemContainerRef.current) {
         setSelectedPoemIndex((prevIndex) =>
           prevIndex === 0 ? prevIndex : prevIndex - 1
@@ -43,19 +46,19 @@ function App() {
     },
   });
 
-  WheelReact.config({
-    up: () => {
-      const bottom =
-        poemContainerRef.scrollHeight - poemContainerRef.scrollTop ===
-        poemContainerRef.clientHeight;
-      if (bottom) {
-        console.log("wheel up detected.");
-      }
-    },
-    down: () => {
-      console.log("wheel down detected.");
-    },
-  });
+  // WheelReact.config({
+  //   up: () => {
+  //     const bottom =
+  //       poemContainerRef.scrollHeight - poemContainerRef.scrollTop ===
+  //       poemContainerRef.clientHeight;
+  //     if (bottom) {
+  //       console.log("wheel up detected.");
+  //     }
+  //   },
+  //   down: () => {
+  //     console.log("wheel down detected.");
+  //   },
+  // });
 
   const detectKeyDown = (e) => {
     e.preventDefault();
@@ -113,6 +116,7 @@ function App() {
                 title={selectedPoem.title}
                 text={selectedPoem.text}
                 poemContainerRef={poemContainerRef}
+                isPoemSelected={isPoemSelected}
               />
             </CSSTransition>
           </SwitchTransition>
