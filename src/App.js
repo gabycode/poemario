@@ -23,9 +23,6 @@ function App() {
       setIsRendered(false);
     }, 5000);
   }, []);
-  useEffect(() => {
-    console.log(selectedPoemIndex);
-  }, [selectedPoemIndex]);
 
   SwipeReact.config({
     left: () => {
