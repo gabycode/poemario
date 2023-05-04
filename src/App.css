@@ -145,7 +145,7 @@ em {
   background-color: transparent;
 }
 
-.poem-verse::-webkit-scrollbar {
+.poem-text::-webkit-scrollbar {
   width: 0;
   height: 0;
   background-color: transparent;
@@ -232,7 +232,7 @@ em {
   font-size: 2rem;
 }
 
-.poem-verse {
+.poem-text {
   line-height: 2;
   max-width: 80rem;
   /* margin: 1em auto; */
