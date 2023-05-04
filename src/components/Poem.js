@@ -6,7 +6,7 @@ const Poem = ({ title, text, poemContainerRef, poemChanged }) => {
       <h2 className="poem-title">{title}</h2>
       <div className="gradient-top"></div>
       <div
-        className="poem-verse"
+        className="poem-text"
         dangerouslySetInnerHTML={{ __html: text }}></div>
       <div className="gradient"></div>
     </div>
