@@ -69,10 +69,13 @@ em {
 
 /* General */
 
-.main-container {
+#root {
   display: flex;
-  flex-direction: column;
-  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-container {
   max-width: 64rem;
   animation: fadein 2s;
 }
