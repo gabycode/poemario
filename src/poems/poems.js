@@ -1,6 +1,7 @@
 export const poems = [
   {
     id: "I",
+    author: "Ricardo Domínguez",
     title: "I",
     text: `<p class="verse">Al picar la sexta cuerda de mi guitarra en el quinto traste,<br>
 Si está bien afinada, la quinta cuerda vibrará también.<p>
@@ -17,6 +18,7 @@ De aquí… Sale el fuego.</p>
   },
   {
     id: "II",
+    author: "Ricardo Domínguez",
     title: "II",
     text: `<p class="verse">La verdad que hay veces, que no puedo hacer nada; pero no fracasé.<br>
 La verdad que hay veces, que no puedo decir nada; y todos me oyen.<br>
@@ -27,6 +29,7 @@ La verdad que si te eres amigo, familiar o compañero; te quiero mucho.</p>
   },
   {
     id: "III",
+    author: "Ricardo Domínguez",
     title: "III - Entre el fuego y la tierra",
     text: `<p class="verse">¿Cuántas mil y una noches habrás contado en tabernas?
 
@@ -50,6 +53,7 @@ Que mi tempestad nunca se acabe.</p>
   },
   {
     id: "IV",
+    author: "Ricardo Domínguez",
     title: "IV - Analysing… Error 42",
     text: `<p class="verse">Philosophical mode... Engage<br>
 Systems evaluation... Check<br>
@@ -73,6 +77,7 @@ System reset... Complete<br>
   },
   {
     id: "V",
+    author: "Ricardo Domínguez",
     title: "V - La Cicatriz en su pierna",
     text: `<p class="verse">Es de admirar<br>
 Las imperfecciones del cuerpo<br>
@@ -95,6 +100,7 @@ Y yo le pertenezco</p>
   },
   {
     id: "VI",
+    author: "Ricardo Domínguez",
     title: "VI - Divine Elegance",
     text: `<p class="verse">Words and messages drift upon your wings<br>
 Lightly and heavenly as a breath of God himself<br>
@@ -118,6 +124,7 @@ And the whispers of the trees...</p>
   },
   {
     id: "VII",
+    author: "Ricardo Domínguez",
     title: "VII (Permanent Damage)",
     text: `<p class="verse">"When the world is quiet,<br>
 I can still hear noise.<br>
@@ -126,6 +133,7 @@ And it won't let me sleep."</p>
   },
   {
     id: "VIII",
+    author: "Ricardo Domínguez",
     title: "VIII",
     text: `<p class="verse">Hoy, ahora mismo: es todo.</p>
 
@@ -148,6 +156,7 @@ Me gusta mucho.</p>
   },
   {
     id: "IX",
+    author: "Ricardo Domínguez",
     title: "IX",
     text: `<p class="verse">¿Alguna vez habían sido perturbados tus latidos<br>
 Por el vibrato de un alma?</p>
@@ -174,6 +183,7 @@ Tierra de montañas.</p>
   },
   {
     id: "X",
+    author: "Ricardo Domínguez",
     title: "X",
     text: `<p class="verse">Café de mi tierra,<br>
 Calentao con fuego de corazón.</p>
@@ -190,6 +200,7 @@ Y er duende salga a joder.</p>
   },
   {
     id: "XI",
+    author: "Ricardo Domínguez",
     title: "XI - Despacio",
     text: `<p class="verse">Mírame<br>
 Por donde va<br>
@@ -222,6 +233,7 @@ Recuérdame</p>
   },
   {
     id: "XII",
+    author: "Ricardo Domínguez",
     title: "XII",
     text: `<p class="verse">Me pierdo a veces<br>
 En las lunas de tu cara<br>
@@ -266,6 +278,7 @@ Y toma, todos mis besos.</p>
   },
   {
     id: "XIII",
+    author: "Ricardo Domínguez",
     title: "XIII",
     text: `<p class="verse">Llueve, y el petrichor alimenta la chimenea de mi nostalgia.</p>
 
@@ -278,6 +291,7 @@ Y toma, todos mis besos.</p>
   },
   {
     id: "XIV",
+    author: "Ricardo Domínguez",
     title: "XIV",
     text: `<p class="verse">Alza la cabeza y anda tu camino,<br>
 Sin orgullo, mas con coraje.<br>
@@ -293,6 +307,7 @@ Bendición de hoy.</p>
   },
   {
     id: "XV",
+    author: "Ricardo Domínguez",
     title: "XV",
     text: `<p class="verse">A las niñas les gustan los chicos malos.<br>
 A la mujer, <strong>un</strong> hombre valiente.<br>
@@ -303,6 +318,7 @@ Y si sabe llorar,</p>
   },
   {
     id: "XVI",
+    author: "Ricardo Domínguez",
     title: "XVI",
     text: `<p class="verse">Como todo lo natural,<br>
 Empieza joven y confusa<br>
@@ -343,6 +359,7 @@ Para quitármela de encima…</p>
   },
   {
     id: "XVII",
+    author: "Ricardo Domínguez",
     title: "XVII",
     text: `<p class="verse"><strong>Un,</strong> dos, tres<br>
 Un, <strong>dos,</strong> tres<br>
@@ -356,6 +373,7 @@ No es que vaya a parte</p>
   },
   {
     id: "XVIII",
+    author: "Ricardo Domínguez",
     title: "XVIII",
     text: `<p class="verse">Steel your daughters’ heart,<br>
 Against artists and romantics.<br>
@@ -365,6 +383,7 @@ Heart your daughters’ steal.</p>
   },
   {
     id: "XIX",
+    author: "Ricardo Domínguez",
     title: "XIX",
     text: `<p class="verse">How must it feel,<br>
 To be a castaway,<br>
@@ -394,6 +413,7 @@ Pero nada maldito idiota.</p>
   },
   {
     id: "XX",
+    author: "Ricardo Domínguez",
     title: "XX",
     text: `<p class="verse">Así en ignorancia,<br>
 Quiero escribir un poema.<br> 
@@ -428,6 +448,7 @@ Y así siempre voy.</p>
   },
   {
     id: "XXI",
+    author: "Ricardo Domínguez",
     title: "XXI",
     text: `<p class="verse">Teach me how to fly<br>
 And I’ll be on my way.</p>
@@ -435,6 +456,7 @@ And I’ll be on my way.</p>
   },
   {
     id: "XXII",
+    author: "Ricardo Domínguez",
     title: "XXII",
     text: `<p class="verse">Me inunda la curiosidad<br>
 Al haberme enseñado tanto<br>
@@ -443,6 +465,7 @@ Ver cuanto te falta por entender.</p>
   },
   {
     id: "XXIII",
+    author: "Ricardo Domínguez",
     title: "XXIII",
     text: `<p class="verse">Imagine the delight ,<br>
 Lonely souls finding company. </p>
@@ -460,6 +483,7 @@ passing time.</p>
   },
   {
     id: "XXIV",
+    author: "Ricardo Domínguez",
     title: "XXIV",
     text: `<p class="verse">Hoy,</p>
 
@@ -504,6 +528,7 @@ Ya vendrá, y seguirá el sueño donde quedamos…</p>
   },
   {
     id: "XXV",
+    author: "Ricardo Domínguez",
     title: "XXV",
     text: `<p class="verse">Hoy quisiera ser poeta<br>
 Saber ponerte en palabras<br>
