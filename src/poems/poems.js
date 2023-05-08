@@ -2,56 +2,56 @@ export const poems = [
   {
     id: "I",
     title: "I",
-    text: `<p class="verse" tabindex="0">Al picar la sexta cuerda de mi guitarra en el quinto traste,<br>
+    text: `<p class="verse">Al picar la sexta cuerda de mi guitarra en el quinto traste,<br>
 Si está bien afinada, la quinta cuerda vibrará también.<p>
 
-<p class="verse" tabindex="0">Aun siendo distintas verdades y diferentes matices,<br>
+<p class="verse">Aun siendo distintas verdades y diferentes matices,<br>
 Hasta el silencio, se han de hablar como almas gemelas.</p>
 
-<p class="verse" tabindex="0">Igual nosotros al ser entendidos.<br>
+<p class="verse">Igual nosotros al ser entendidos.<br>
 No ha de confundirse con alguna emoción,</p>
 
-<p class="verse" tabindex="0">Más bien, que hablamos el mismo idioma místico.<br>
+<p class="verse">Más bien, que hablamos el mismo idioma místico.<br>
 De aquí… Sale el fuego.</p>
 `,
   },
   {
     id: "II",
     title: "II",
-    text: `<p class="verse" tabindex="0">La verdad que hay veces, que no puedo hacer nada; pero no fracasé.<br>
+    text: `<p class="verse">La verdad que hay veces, que no puedo hacer nada; pero no fracasé.<br>
 La verdad que hay veces, que no puedo decir nada; y todos me oyen.<br>
 La verdad que si te eres amigo, familiar o compañero; te quiero mucho.</p>
 
-<p class="verse" tabindex="0">La verdad es que si bien las cosas pasan, y me duelen; soy muy feliz.</p>
+<p class="verse">La verdad es que si bien las cosas pasan, y me duelen; soy muy feliz.</p>
 `,
   },
   {
     id: "III",
     title: "III - Entre el fuego y la tierra",
-    text: `<p class="verse" tabindex="0">¿Cuántas mil y una noches habrás contado en tabernas?
+    text: `<p class="verse">¿Cuántas mil y una noches habrás contado en tabernas?
 
-<p class="verse" tabindex="0">Entre la tierra y el fuego mueren para renacer los árboles que cantan.<br>
+<p class="verse">Entre la tierra y el fuego mueren para renacer los árboles que cantan.<br>
 Cada lágrima nace solo más fuerte que la anterior.<br>
 Pero es el corazón que llora.<br>
 Nuestros ojos los que palpitan al ritmo del desastre que ven.</p>
 
-<p class="verse" tabindex="0">¿Cuántas mil y una noches contaré antes de besarte?</p>
+<p class="verse">¿Cuántas mil y una noches contaré antes de besarte?</p>
 
-<p class="verse" tabindex="0">Donde me dejarás ser tuyo?<br>
+<p class="verse">Donde me dejarás ser tuyo?<br>
 Por qué preguntar cuando, nunca me dirias... pero si o no...<br>
 Te escapas, porque juegas con mi pasión.<br>
 Que mi tempestad nunca se acabe.</p>
 
-<p class="verse" tabindex="0">Te encontraré carajo.</p>
+<p class="verse">Te encontraré carajo.</p>
 
-<p class="verse" tabindex="0">Mil y una noches después.</p>
+<p class="verse">Mil y una noches después.</p>
 
           </p>`,
   },
   {
     id: "IV",
     title: "IV - Analysing… Error 42",
-    text: `<p class="verse" tabindex="0">Philosophical mode... Engage<br>
+    text: `<p class="verse">Philosophical mode... Engage<br>
 Systems evaluation... Check<br>
 Hardware evaluation... Check<br>
 Brain temperature levels... Stable<br>
@@ -74,52 +74,52 @@ System reset... Complete<br>
   {
     id: "V",
     title: "V - La Cicatriz en su pierna",
-    text: `<p class="verse" tabindex="0">Es de admirar<br>
+    text: `<p class="verse">Es de admirar<br>
 Las imperfecciones del cuerpo<br>
 La separa de las demás<br>
 Y me enamoro de nuevo</p>
 
-<p class="verse" tabindex="0">Caricias y besos<br>
+<p class="verse">Caricias y besos<br>
 La conmueven a suspirar<br>
 Mientras mis dedos<br>
 Rejuegan con su marca</p>
 
-<p class="verse" tabindex="0">Como la obtuvo es de olvido continuo<br>
+<p class="verse">Como la obtuvo es de olvido continuo<br>
 Ya no es marca de dolor<br>
 Es espacio para nosotros<br>
 Para tocar</p>
 
-<p class="verse" tabindex="0">Ella es mía<br>
+<p class="verse">Ella es mía<br>
 Y yo le pertenezco</p>
 `,
   },
   {
     id: "VI",
     title: "VI - Divine Elegance",
-    text: `<p class="verse" tabindex="0">Words and messages drift upon your wings<br>
+    text: `<p class="verse">Words and messages drift upon your wings<br>
 Lightly and heavenly as a breath of God himself<br>
 Taken to peace and a world of high hopes<br>
 I can't imagine my <strong>life</strong> without your visits</p>
 
-<p class="verse" tabindex="0">Forgetful minds appreciate memories<br>
+<p class="verse">Forgetful minds appreciate memories<br>
 Moments stop... <strong>Breath</strong>, remember and exhale<br>
 Perhaps a blank state of mind would suit to define you<br>
 Yet, if but a thought opened, you'd go on...</p>
 
-<p class="verse" tabindex="0"><em>... I'll forget tomorrow.</em></p>
+<p class="verse"><em>... I'll forget tomorrow.</em></p>
 
-<p class="verse" tabindex="0">Imagine her dark hair, big beautiful <strong>eyes</strong><br>
+<p class="verse">Imagine her dark hair, big beautiful <strong>eyes</strong><br>
 Held together and eternal with your blanket<br>
 My regret must be to leave the park<br>
 And the whispers of the trees...</p>
 
-<p class="verse" tabindex="0"><em>... we'll  talk tomorrow, I hope.</em></p>
+<p class="verse"><em>... we'll  talk tomorrow, I hope.</em></p>
 `,
   },
   {
     id: "VII",
     title: "VII (Permanent Damage)",
-    text: `<p class="verse" tabindex="0">"When the world is quiet,<br>
+    text: `<p class="verse">"When the world is quiet,<br>
 I can still hear noise.<br>
 And it won't let me sleep."</p>
 `,
@@ -127,47 +127,47 @@ And it won't let me sleep."</p>
   {
     id: "VIII",
     title: "VIII",
-    text: `<p class="verse" tabindex="0">Hoy, ahora mismo: es todo.</p>
+    text: `<p class="verse">Hoy, ahora mismo: es todo.</p>
 
-<p class="verse" tabindex="0">La anciana de vestido rojo,<br>
+<p class="verse">La anciana de vestido rojo,<br>
 sin falta en la iglesia.</p>
 
-<p class="verse" tabindex="0">La señora que se detuvo<br>
+<p class="verse">La señora que se detuvo<br>
 A orarle a San Miguel.</p>
 
-<p class="verse" tabindex="0">El hombre que llevaba comida.</p>
+<p class="verse">El hombre que llevaba comida.</p>
 
-<p class="verse" tabindex="0">El café en mí.</p>
+<p class="verse">El café en mí.</p>
 
-<p class="verse" tabindex="0">La vida, está aquí para quedarse.<br>
+<p class="verse">La vida, está aquí para quedarse.<br>
 Y eso es bueno.</p>
 
-<p class="verse" tabindex="0">Hoy, ahora mismo:<br>
+<p class="verse">Hoy, ahora mismo:<br>
 Me gusta mucho.</p>
 `,
   },
   {
     id: "IX",
     title: "IX",
-    text: `<p class="verse" tabindex="0">¿Alguna vez habían sido perturbados tus latidos<br>
+    text: `<p class="verse">¿Alguna vez habían sido perturbados tus latidos<br>
 Por el vibrato de un alma?</p>
 
-<p class="verse" tabindex="0">Le daría mis manos por su cante.<br>
+<p class="verse">Le daría mis manos por su cante.<br>
 Le daría mi voz por sus manos.</p>
 
-<p class="verse" tabindex="0">Pero no tengo valor para su compañía.<br>
+<p class="verse">Pero no tengo valor para su compañía.<br>
 Obvio, si soy esclavo de esta maldita bendición.</p>
 
-<p class="verse" tabindex="0">Aún no encuentro deshacer el hechizo.<br>
+<p class="verse">Aún no encuentro deshacer el hechizo.<br>
 Quizás merezca caer prisionero.<br>
 Que por egoísta quedo fuera.</p>
 
-<p class="verse" tabindex="0">Este es el verso que introduzco<br>
+<p class="verse">Este es el verso que introduzco<br>
 Solo por estética.<br>
 Por durar con cuidado<br>
 Lo completamente necesario.</p>
 
-<p class="verse" tabindex="0">Todavía llovizna por allá lejos.<br>
+<p class="verse">Todavía llovizna por allá lejos.<br>
 En tierra.<br>
 Tierra de montañas.</p>
 `,
@@ -175,16 +175,16 @@ Tierra de montañas.</p>
   {
     id: "X",
     title: "X",
-    text: `<p class="verse" tabindex="0">Café de mi tierra,<br>
+    text: `<p class="verse">Café de mi tierra,<br>
 Calentao con fuego de corazón.</p>
 
-<p class="verse" tabindex="0">Miro por mirar,<br>
+<p class="verse">Miro por mirar,<br>
 Pero aquí es que quiero estar.</p>
 
-<p class="verse" tabindex="0">Sentado no más bajo sol,<br>
+<p class="verse">Sentado no más bajo sol,<br>
 Hasta la noche mágica.</p>
 
-<p class="verse" tabindex="0">Que la piel se me quita,<br>
+<p class="verse">Que la piel se me quita,<br>
 Y er duende salga a joder.</p>
 `,
   },
