@@ -90,7 +90,8 @@ function App() {
       className="main-container"
       {...WheelReact.events}
       {...SwipeReact.events}>
-      <h1 className="main-title">Ricardo Domínguez</h1>
+      <h1 className="main-title">mi poemario</h1>
+
       <div className="content">
         <nav className="poem-navbar">
           <PoemNav
