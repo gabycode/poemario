@@ -113,6 +113,7 @@ function App() {
               <Poem
                 title={selectedPoem.title}
                 text={selectedPoem.text}
+                author={selectedPoem.author}
                 poemContainerRef={poemContainerRef}
                 isPoemSelected={isPoemSelected}
               />
