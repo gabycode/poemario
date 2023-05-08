@@ -27,11 +27,11 @@
 /* Element tags */
 
 h1 {
-  font-size: 4rem;
+  font-size: 2.8rem;
 }
 
 h2 {
-  font-size: 2.8rem;
+  font-size: 2.4rem;
 }
 
 h1,
@@ -72,22 +72,32 @@ em {
 #root {
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
+  /* height: 100vh; */
 }
 
 .main-container {
-  max-width: 64rem;
+  width: 64rem;
   animation: fadein 2s;
 }
 
 .main-title {
-  margin-left: 10rem;
-  margin-bottom: 3rem;
   font-weight: 700;
+  letter-spacing: -0.05em;
+  display: flex;
+  justify-content: center;
+}
+
+.poem-author {
+  color: #fff;
+  font-weight: 400;
+  letter-spacing: -0.05em;
 }
 
 .content {
   display: flex;
+  flex-direction: row;
+  padding-top: 2rem;
 }
 
 .poem-navbar {
@@ -126,7 +136,7 @@ em {
 
 .poem,
 .select {
-  margin-left: 5rem;
+  margin-left: 2rem;
   position: relative;
   overflow-y: scroll;
   height: 60rem;
@@ -155,12 +165,12 @@ em {
 }
 
 .gradient-top {
-  position: fixed;
+  position: sticky;
   z-index: 2;
-  right: 60rem;
-  top: 198.5em;
-  left: 50rem;
-  height: 3rem;
+  right: 0;
+  top: 12%;
+  left: 0;
+  height: 1rem;
   background: -moz-linear-gradient(
     bottom,
     rgba(255, 255, 255, 0) 0%,
@@ -222,13 +232,15 @@ em {
   );
 }
 
+.poem-top {
+  position: sticky;
+  top: -1px;
+}
+
 .poem-title,
 .select-title {
-  position: sticky;
   font-weight: 700;
-  top: 0;
   padding-bottom: 1rem;
-  /* padding: 0 0 0.5em; CHECK IN PAGE TO ADD PADDING ACCORDINGLY */
 }
 
 .select-title {
@@ -238,12 +250,12 @@ em {
 .poem-text {
   line-height: 2;
   max-width: 80rem;
-  /* margin: 1em auto; */
+  padding-top: 0.5rem;
 }
 
 .verse {
-  color: var(--neutral-color-500);
-  transition: all 300ms;
+  color: var(--neutral-color-700);
+  transition: 900ms;
   cursor: pointer;
   margin-bottom: 3.2em;
 }
@@ -253,7 +265,7 @@ em {
 }
 
 .verse:hover {
-  color: var(--neutral-color-700) !important;
+  color: var(--neutral-color-500);
 }
 
 .fade-enter {
@@ -281,17 +293,14 @@ footer {
 }
 
 @media (max-width: 435px) {
+  #root {
+    align-items: center;
+    height: 100vh;
+  }
   .main-container {
     padding-top: 0.5rem;
   }
 
-  .select {
-    margin-left: 0;
-  }
-  .main-title {
-    margin-left: 5rem;
-    font-size: 2.24rem;
-  }
   .poem-number {
     font-size: 1.44rem;
   }
@@ -300,21 +309,28 @@ footer {
     font-weight: 700;
     color: var(--neutral-color-200);
   }
+  .select,
   .poem {
     margin-left: 1rem;
-    height: 55rem;
   }
-  .poem-title {
-    font-size: 1.6rem;
-    /* margin-bottom: 20px; */
+  .poem {
+    height: 80vh;
   }
+
+  .poem-text {
+    margin-top: -12px;
+  }
+
   .verse {
     font-size: 1.2rem;
   }
 
   .gradient-top {
-    right: 179em;
-    top: 140em;
-    left: 5rem;
+    top: 10%;
+    height: 1.5rem;
+  }
+
+  .gradient {
+    height: 30rem;
   }
 }
