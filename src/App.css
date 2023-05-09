@@ -173,7 +173,7 @@ em {
   position: sticky;
   z-index: 2;
   right: 0;
-  top: 12%;
+  top: 7rem;
   left: 0;
   height: 1rem;
   background: -moz-linear-gradient(
@@ -331,7 +331,6 @@ footer {
   }
 
   .gradient-top {
-    top: 10%;
     height: 1.5rem;
   }
 
