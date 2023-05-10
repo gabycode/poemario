@@ -96,6 +96,7 @@ a {
   transition: top 2s ease-in-out;
   font-size: 2.8rem;
   font-weight: 700;
+  white-space: nowrap;
 }
 
 .slide-up {
@@ -148,23 +149,29 @@ a {
   justify-content: center;
 }
 
+.content {
+  display: grid;
+  grid-template-columns: 7rem auto;
+  grid-template-rows: repeat(2, auto);
+  padding-top: 2rem;
+}
+
 .poem-author {
   color: #fff;
   font-weight: 400;
   letter-spacing: -0.05em;
-}
-
-.content {
-  display: flex;
-  flex-direction: row;
-  padding-top: 2rem;
+  animation: fadein 2s;
+  grid-column: 2/-1;
+  grid-row: 1/2;
 }
 
 .poem-navbar {
-  width: 5rem;
+  width: 1rem;
   justify-content: flex-start;
   display: flex;
   flex-direction: column;
+  grid-column: 1/2;
+  grid-row: 2/-1;
 }
 
 .poem-number {
@@ -196,10 +203,11 @@ a {
 
 .poem,
 .select {
-  margin-left: 2rem;
   position: relative;
   overflow-y: scroll;
   height: 60rem;
+  grid-column: 2/-1;
+  grid-row: 2/-1;
 }
 
 .poem {
@@ -241,7 +249,7 @@ a {
   position: sticky;
   z-index: 2;
   right: 0;
-  top: 7rem;
+  top: 3.5rem;
   left: 0;
   height: 1rem;
   background: -moz-linear-gradient(
@@ -403,6 +411,6 @@ footer {
   }
 
   .gradient {
-    height: 30rem;
+    height: 10rem;
   }
 }
