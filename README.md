@@ -7,7 +7,6 @@
 
 ## Table Of Contents
 
-- [Table Of Contents](#table-of-contents)
 - [Installation](#installation)
 - [Git Commands](#git-commands)
 
