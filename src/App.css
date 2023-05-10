@@ -1,7 +1,7 @@
 :root {
-  --primary-color: #2c3639;
-  --neutral-color-200: #f8bb5f;
-  --neutral-color-500: #fef1df;
+  --secondary-color-500: #2c3639;
+  --main-color-500: #f8bb5f;
+  --main-color-100: #fef1df;
   --neutral-color-700: #a4a4a4;
   --neutral-color-20: rgba(254, 241, 223, 0.2);
 }
@@ -16,7 +16,7 @@
   user-select: none; /* Standard syntax */
   -ms-overflow-style: none; /* Hide Scrollbar for IE and Edge*/
   scrollbar-width: none; /* Hide Scrollbar for Firefox*/
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color-500);
   font-family: "Roboto Slab", sans-serif;
 }
 
@@ -42,7 +42,7 @@ h2 {
 h1,
 h2 {
   font-weight: 500;
-  color: var(--neutral-color-200);
+  color: var(--main-color-500);
 }
 
 p,
@@ -51,25 +51,80 @@ em {
   font-size: 1.5rem;
 }
 
+a {
+  text-decoration: none;
+}
+
 /* container for intro text */
 .container {
+  position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  animation: fade 3s;
-  opacity: 0;
+  animation: fade-in 5s;
+}
+
+.container.fade-out {
+  animation: fade-out 5s;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 .intro {
-  font-size: 3.2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: top 2s ease-in-out;
+  font-size: 2.8rem;
   font-weight: 700;
 }
 
-@keyframes fade {
-  50% {
-    opacity: 1;
+.slide-up {
+  top: 10%;
+}
+
+@keyframes slideup {
+  0% {
+    transform: translateY(100%);
   }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.author-list {
+  display: flex;
+  flex-direction: column;
+  animation: fadein 2s;
+}
+
+.author-select {
+  cursor: pointer;
+  border: none;
+  font-size: 2.2rem;
+  color: #fff;
+  font-weight: 400;
+  letter-spacing: -0.05rem;
+  padding: 1rem;
 }
 
 /* General */
@@ -133,7 +188,7 @@ em {
   .poem-number:hover,
   .poem-number.active {
     font-weight: 700;
-    color: var(--neutral-color-200);
+    color: var(--main-color-500);
   }
 }
 
@@ -147,12 +202,25 @@ em {
   height: 60rem;
 }
 
+.poem {
+  animation: fadein 2s;
+}
+
 @keyframes fadein {
   from {
     opacity: 0;
   }
   to {
     opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }
 
@@ -270,7 +338,7 @@ em {
 }
 
 .verse:hover {
-  color: var(--neutral-color-500);
+  color: var(--main-color-100);
 }
 
 .fade-enter {
@@ -312,7 +380,7 @@ footer {
   .poem-number.active {
     margin-bottom: 0;
     font-weight: 700;
-    color: var(--neutral-color-200);
+    color: var(--main-color-500);
   }
   .select,
   .poem {

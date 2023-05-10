@@ -536,4 +536,22 @@ Admirarte lujos de belleza<br>
 Y entender que eres raras</p>
     `,
   },
+  {
+    id: "I",
+    author: "Priscilla",
+    title: "I",
+    text: `<p class="verse">Este es un poema de<br>
+Priscilla<br>
+Prueba de logica<br>
+    `,
+  },
+  {
+    id: "I",
+    author: "Rafael",
+    title: "I",
+    text: `<p class="verse">Este es un poema de<br>
+Rafael<br>
+Prueba de logica<br>
+    `,
+  },
 ];
