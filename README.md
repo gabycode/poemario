@@ -23,6 +23,7 @@ npm -v
 ```
 
 3. In VS Code Terminal, go to folder where you want to clone repository.
+4. Clone repository
 ```
 git clone https://github.com/gabycode/poemario.git
 ```
