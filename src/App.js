@@ -16,8 +16,8 @@ function App() {
   const [showAuthorList, setShowAuthorList] = useState(false);
   const selectedPoem = poems[selectedPoemIndex];
   const poemContainerRef = useRef(null);
-  const [isRendered, setIsRendered] = useState(true);
   const [isPoemSelected, setIsPoemSelected] = useState(false);
+  const [isRendered, setIsRendered] = useState(true);
   const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
@@ -160,6 +160,9 @@ function App() {
       </a>
 
       <div className="content">
+        {isPoemSelected && (
+          <h2 className="poem-author">{selectedPoem.author}</h2>
+        )}
         <nav className="poem-navbar">
           <PoemNav
             poems={poems}
