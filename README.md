@@ -38,6 +38,11 @@ npm install
 npm start
 ```
 
+* To upload files to hosting page, update build folder if changes were made:
+```
+npm run build
+````
+
 ## Git Commands
 * Always pull main branch in case there are changes 
 ``` 
