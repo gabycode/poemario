@@ -14,11 +14,11 @@ function App() {
   const [selectedAuthor, setSelectedAuthor] = useState(null);
   const [slideIntro, setSlideIntro] = useState(false);
   const [showAuthorList, setShowAuthorList] = useState(false);
-  const selectedPoem = poems[selectedPoemIndex];
   const poemContainerRef = useRef(null);
   const [isPoemSelected, setIsPoemSelected] = useState(false);
   const [isRendered, setIsRendered] = useState(true);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [filteredPoems, setFilteredPoems] = useState([]);
 
   useEffect(() => {
     document.addEventListener("keydown", detectKeyDown, true);
@@ -84,38 +84,19 @@ function App() {
     setSelectedAuthor(author);
     setIsAnimating(true);
     setIsRendered(false);
+    const authorPoems = poems.filter((poem) => poem.author === author);
+    setFilteredPoems(authorPoems);
   };
 
   const handlePoemSelect = (index) => {
-    setSelectedPoemIndex(index);
+    const selectedPoem = filteredPoems[index];
+    const poemIndex = poems.findIndex((poem) => poem.id === selectedPoem.id);
+    setSelectedPoemIndex(poemIndex);
     setIsPoemSelected(true);
   };
 
-  const renderPoems = () => {
-    if (selectedAuthor) {
-      const authorPoems = poems.filter(
-        (poem) => poem.author === selectedAuthor
-      );
-      return authorPoems.map((poem) => (
-        <SwitchTransition>
-          <CSSTransition
-            classNames="fade"
-            key={poem.id}
-            addEndListener={(node, done) =>
-              node.addEventListener("transitionend", done, false)
-            }>
-            <Poem
-              title={poem.title}
-              text={poem.text}
-              author={poem.author}
-              poemContainerRef={poemContainerRef}
-              isPoemSelected={isPoemSelected}
-            />
-          </CSSTransition>
-        </SwitchTransition>
-      ));
-    }
-  };
+  const selectedPoem =
+    filteredPoems[selectedPoemIndex] || poems[selectedPoemIndex];
 
   if (isRendered) {
     return (
@@ -145,7 +126,6 @@ function App() {
             </button>
           </div>
         )}
-        <div className="poems">{renderPoems()}</div>
       </div>
     );
   }
@@ -160,19 +140,20 @@ function App() {
       </a>
 
       <div className="content">
-        {isPoemSelected && (
+        {isPoemSelected && selectedPoem ? (
           <h2 className="poem-author">{selectedPoem.author}</h2>
-        )}
+        ) : null}
+
         <nav className="poem-navbar">
           <PoemNav
-            poems={poems}
+            poems={filteredPoems}
             handlePoemSelect={handlePoemSelect}
             selectedPoemIndex={selectedPoemIndex}
-            setIsPoemSelected={setIsPoemSelected}
+            selectedPoem={selectedPoem}
           />
         </nav>
 
-        {isPoemSelected ? (
+        {isPoemSelected && selectedPoem ? (
           <SwitchTransition>
             <CSSTransition
               classNames="fade"
