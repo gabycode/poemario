@@ -152,7 +152,7 @@ a {
 .content {
   display: grid;
   grid-template-columns: 7rem auto;
-  grid-template-rows: repeat(2, auto);
+  grid-template-rows: 5rem auto;
   padding-top: 2rem;
 }
 
@@ -188,6 +188,11 @@ a {
   transition: all 0.9s ease-in-out;
   cursor: pointer;
 }
+
+/* .poem-number:focus {
+  font-weight: 700;
+  color: var(--main-color-500);
+} */
 
 /* MEDIA QUERY PLACED HERE FOR THE HOVER AND ACTIVE */
 
