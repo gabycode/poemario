@@ -546,10 +546,28 @@ Prueba de logica<br>
     `,
   },
   {
+    id: "II",
+    author: "Priscilla",
+    title: "II",
+    text: `<p class="verse">POEMA 2 DE<br>
+Priscilla<br>
+Prueba de logica<br>
+    `,
+  },
+  {
     id: "I",
     author: "Rafael",
     title: "I",
     text: `<p class="verse">Este es un poema de<br>
+Rafael<br>
+Prueba de logica<br>
+    `,
+  },
+  {
+    id: "II",
+    author: "Rafael",
+    title: "II",
+    text: `<p class="verse">POEMA 2 DE<br>
 Rafael<br>
 Prueba de logica<br>
     `,
