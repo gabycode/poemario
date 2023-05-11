@@ -1,12 +1,19 @@
-const PoemNav = ({ poems, handlePoemSelect, selectedPoemIndex }) => {
+const PoemNav = ({
+  poems,
+  handlePoemSelect,
+  selectedPoemIndex,
+  selectedPoem,
+}) => {
   return (
     <ul>
       {poems.map((poem, index) => (
         <li
           key={index}
-          onClick={() => handlePoemSelect(index)}
+          onClick={() => {
+            handlePoemSelect(index);
+          }}
           className={`poem-number ${
-            selectedPoemIndex === index ? "active" : ""
+            selectedPoem && poem.id === selectedPoem.id ? "active" : ""
           }`}>
           {poem.id}
         </li>
