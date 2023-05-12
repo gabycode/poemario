@@ -1,8 +1,8 @@
 export const poems = [
   {
-    id: "I",
+    id: "01",
     author: "Ricardo Domínguez",
-    title: "I",
+    title: "01",
     text: `<p class="verse">Al picar la sexta cuerda de mi guitarra en el quinto traste,<br>
 Si está bien afinada, la quinta cuerda vibrará también.<p>
 
@@ -17,9 +17,9 @@ De aquí… Sale el fuego.</p>
 `,
   },
   {
-    id: "II",
+    id: "02",
     author: "Ricardo Domínguez",
-    title: "II",
+    title: "02",
     text: `<p class="verse">La verdad que hay veces, que no puedo hacer nada; pero no fracasé.<br>
 La verdad que hay veces, que no puedo decir nada; y todos me oyen.<br>
 La verdad que si te eres amigo, familiar o compañero; te quiero mucho.</p>
@@ -28,9 +28,9 @@ La verdad que si te eres amigo, familiar o compañero; te quiero mucho.</p>
 `,
   },
   {
-    id: "III",
+    id: "03",
     author: "Ricardo Domínguez",
-    title: "III - Entre el fuego y la tierra",
+    title: "03 - Entre el fuego y la tierra",
     text: `<p class="verse">¿Cuántas mil y una noches habrás contado en tabernas?
 
 <p class="verse">Entre la tierra y el fuego mueren para renacer los árboles que cantan.<br>
@@ -52,9 +52,9 @@ Que mi tempestad nunca se acabe.</p>
           </p>`,
   },
   {
-    id: "IV",
+    id: "04",
     author: "Ricardo Domínguez",
-    title: "IV - Analysing… Error 42",
+    title: "04 - Analysing… Error 42",
     text: `<p class="verse">Philosophical mode... Engage<br>
 Systems evaluation... Check<br>
 Hardware evaluation... Check<br>
@@ -76,9 +76,9 @@ System reset... Complete<br>
 `,
   },
   {
-    id: "V",
+    id: "05",
     author: "Ricardo Domínguez",
-    title: "V - La Cicatriz en su pierna",
+    title: "05 - La Cicatriz en su pierna",
     text: `<p class="verse">Es de admirar<br>
 Las imperfecciones del cuerpo<br>
 La separa de las demás<br>
@@ -99,9 +99,9 @@ Y yo le pertenezco</p>
 `,
   },
   {
-    id: "VI",
+    id: "06",
     author: "Ricardo Domínguez",
-    title: "VI - Divine Elegance",
+    title: "06 - Divine Elegance",
     text: `<p class="verse">Words and messages drift upon your wings<br>
 Lightly and heavenly as a breath of God himself<br>
 Taken to peace and a world of high hopes<br>
@@ -123,18 +123,18 @@ And the whispers of the trees...</p>
 `,
   },
   {
-    id: "VII",
+    id: "07",
     author: "Ricardo Domínguez",
-    title: "VII (Permanent Damage)",
+    title: "07 (Permanent Damage)",
     text: `<p class="verse">"When the world is quiet,<br>
 I can still hear noise.<br>
 And it won't let me sleep."</p>
 `,
   },
   {
-    id: "VIII",
+    id: "08",
     author: "Ricardo Domínguez",
-    title: "VIII",
+    title: "08",
     text: `<p class="verse">Hoy, ahora mismo: es todo.</p>
 
 <p class="verse">La anciana de vestido rojo,<br>
@@ -155,9 +155,9 @@ Me gusta mucho.</p>
 `,
   },
   {
-    id: "IX",
+    id: "09",
     author: "Ricardo Domínguez",
-    title: "IX",
+    title: "09",
     text: `<p class="verse">¿Alguna vez habían sido perturbados tus latidos<br>
 Por el vibrato de un alma?</p>
 
@@ -182,9 +182,9 @@ Tierra de montañas.</p>
 `,
   },
   {
-    id: "X",
+    id: "10",
     author: "Ricardo Domínguez",
-    title: "X",
+    title: "10",
     text: `<p class="verse">Café de mi tierra,<br>
 Calentao con fuego de corazón.</p>
 
@@ -199,9 +199,9 @@ Y er duende salga a joder.</p>
 `,
   },
   {
-    id: "XI",
+    id: "11",
     author: "Ricardo Domínguez",
-    title: "XI - Despacio",
+    title: "11 - Despacio",
     text: `<p class="verse">Mírame<br>
 Por donde va<br>
 El corazón<br>
@@ -232,9 +232,9 @@ Recuérdame</p>
 `,
   },
   {
-    id: "XII",
+    id: "12",
     author: "Ricardo Domínguez",
-    title: "XII",
+    title: "12",
     text: `<p class="verse">Me pierdo a veces<br>
 En las lunas de tu cara<br>
 En estos momentos<br>
@@ -277,9 +277,9 @@ Y toma, todos mis besos.</p>
 `,
   },
   {
-    id: "XIII",
+    id: "13",
     author: "Ricardo Domínguez",
-    title: "XIII",
+    title: "13",
     text: `<p class="verse">Llueve, y el petrichor alimenta la chimenea de mi nostalgia.</p>
 
 <p class="verse">¿Será que estoy feliz? ¿O que feliz, está muy yo hoy?</p>
@@ -290,9 +290,9 @@ Y toma, todos mis besos.</p>
 `,
   },
   {
-    id: "XIV",
+    id: "14",
     author: "Ricardo Domínguez",
-    title: "XIV",
+    title: "14",
     text: `<p class="verse">Alza la cabeza y anda tu camino,<br>
 Sin orgullo, mas con coraje.<br>
 Queda más por venir.<br>
@@ -306,9 +306,9 @@ Bendición de hoy.</p>
     `,
   },
   {
-    id: "XV",
+    id: "15",
     author: "Ricardo Domínguez",
-    title: "XV",
+    title: "15",
     text: `<p class="verse">A las niñas les gustan los chicos malos.<br>
 A la mujer, <strong>un</strong> hombre valiente.<br>
 Y si sabe llorar,</p>
@@ -317,9 +317,9 @@ Y si sabe llorar,</p>
 `,
   },
   {
-    id: "XVI",
+    id: "16",
     author: "Ricardo Domínguez",
-    title: "XVI",
+    title: "16",
     text: `<p class="verse">Como todo lo natural,<br>
 Empieza joven y confusa<br>
 Disfrutando lo sencillo y esencial.</p>
@@ -358,9 +358,9 @@ Para quitármela de encima…</p>
     `,
   },
   {
-    id: "XVII",
+    id: "17",
     author: "Ricardo Domínguez",
-    title: "XVII",
+    title: "17",
     text: `<p class="verse"><strong>Un,</strong> dos, tres<br>
 Un, <strong>dos,</strong> tres<br>
 <strong>Un,</strong> dos</p>
@@ -372,9 +372,9 @@ No es que vaya a parte</p>
     `,
   },
   {
-    id: "XVIII",
+    id: "18",
     author: "Ricardo Domínguez",
-    title: "XVIII",
+    title: "18",
     text: `<p class="verse">Steel your daughters’ heart,<br>
 Against artists and romantics.<br>
 Lest a silver-tongued devil,<br>
@@ -382,9 +382,9 @@ Heart your daughters’ steal.</p>
     `,
   },
   {
-    id: "XIX",
+    id: "19",
     author: "Ricardo Domínguez",
-    title: "XIX",
+    title: "19",
     text: `<p class="verse">How must it feel,<br>
 To be a castaway,<br>
 Build your home,<br>
@@ -412,9 +412,9 @@ Pero nada maldito idiota.</p>
     `,
   },
   {
-    id: "XX",
+    id: "20",
     author: "Ricardo Domínguez",
-    title: "XX",
+    title: "20",
     text: `<p class="verse">Así en ignorancia,<br>
 Quiero escribir un poema.<br> 
 Así sin sentido,<br>
@@ -447,26 +447,26 @@ Y así siempre voy.</p>
     `,
   },
   {
-    id: "XXI",
+    id: "21",
     author: "Ricardo Domínguez",
-    title: "XXI",
+    title: "21",
     text: `<p class="verse">Teach me how to fly<br>
 And I’ll be on my way.</p>
     `,
   },
   {
-    id: "XXII",
+    id: "22",
     author: "Ricardo Domínguez",
-    title: "XXII",
+    title: "22",
     text: `<p class="verse">Me inunda la curiosidad<br>
 Al haberme enseñado tanto<br>
 Ver cuanto te falta por entender.</p>
     `,
   },
   {
-    id: "XXIII",
+    id: "23",
     author: "Ricardo Domínguez",
-    title: "XXIII",
+    title: "23",
     text: `<p class="verse">Imagine the delight ,<br>
 Lonely souls finding company. </p>
 
@@ -482,9 +482,9 @@ passing time.</p>
     `,
   },
   {
-    id: "XXIV",
+    id: "24",
     author: "Ricardo Domínguez",
-    title: "XXIV",
+    title: "24",
     text: `<p class="verse">Hoy,</p>
 
 <p class="verse">Mi respiro al despertar<br>
@@ -527,9 +527,9 @@ Ya vendrá, y seguirá el sueño donde quedamos…</p>
 `,
   },
   {
-    id: "XXV",
+    id: "25",
     author: "Ricardo Domínguez",
-    title: "XXV",
+    title: "25",
     text: `<p class="verse">Hoy quisiera ser poeta<br>
 Saber ponerte en palabras<br>
 Admirarte lujos de belleza<br>
@@ -537,36 +537,36 @@ Y entender que eres raras</p>
     `,
   },
   {
-    id: "I",
+    id: "01",
     author: "Priscilla",
-    title: "I",
+    title: "01",
     text: `<p class="verse">Este es un poema de<br>
 Priscilla<br>
 Prueba de logica<br>
     `,
   },
   {
-    id: "II",
+    id: "02",
     author: "Priscilla",
-    title: "II",
+    title: "02",
     text: `<p class="verse">POEMA 2 DE<br>
 Priscilla<br>
 Prueba de logica<br>
     `,
   },
   {
-    id: "I",
+    id: "01",
     author: "Rafael",
-    title: "I",
+    title: "01",
     text: `<p class="verse">Este es un poema de<br>
 Rafael<br>
 Prueba de logica<br>
     `,
   },
   {
-    id: "II",
+    id: "02",
     author: "Rafael",
-    title: "II",
+    title: "02",
     text: `<p class="verse">POEMA 2 DE<br>
 Rafael<br>
 Prueba de logica<br>
