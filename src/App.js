@@ -82,10 +82,14 @@ function App() {
 
   const handleAuthorSelect = (author) => {
     setSelectedAuthor(author);
-    setIsAnimating(true);
-    setIsRendered(false);
+    setIsAnimating(false);
+    // setIsRendered(true);
     const authorPoems = poems.filter((poem) => poem.author === author);
     setFilteredPoems(authorPoems);
+    setTimeout(() => {
+      setIsRendered(false);
+      setIsAnimating(true);
+    }, 2000);
   };
 
   // Define here because filteredPoems is declared in the handleAuthorSelect function
@@ -99,26 +103,12 @@ function App() {
     setIsPoemSelected(true);
   };
 
-  // const handleAnimationEnd = (event) => {
-  //   if (event.animationName === "fade-out") {
-  //     setIsAnimating(false);
-  //     setTimeout(() => {
-  //       setIsRendered(false);
-  //       // const container = document.querySelector(".container");
-  //       // if (container) {
-  //       //   container.style.display = "none";
-  //       //   container.style.visibility = "hidden";
-  //       // }
-  //     }, 2000);
-  //   }
-  // };
-
   if (isRendered) {
     return (
       <div
         className={`container ${selectedAuthor ? "fade-out" : ""}`}
         id="home"
-        // onAnimationEnd={handleAnimationEnd}
+        // onAnimationEnd={() => setIsAnimating(false)}
       >
         <h1 className={`intro ${slideIntro ? "slide-up" : ""}`}>mi poemario</h1>
         {showAuthorList && (
