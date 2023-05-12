@@ -88,6 +88,10 @@ function App() {
     setFilteredPoems(authorPoems);
   };
 
+  // Define here because filteredPoems is declared in the handleAuthorSelect function
+  const selectedPoem =
+    filteredPoems[selectedPoemIndex] || poems[selectedPoemIndex];
+
   const handlePoemSelect = (index) => {
     const selectedPoem = filteredPoems[index];
     const poemIndex = poems.findIndex((poem) => poem.id === selectedPoem.id);
@@ -95,17 +99,27 @@ function App() {
     setIsPoemSelected(true);
   };
 
-  const selectedPoem =
-    filteredPoems[selectedPoemIndex] || poems[selectedPoemIndex];
+  // const handleAnimationEnd = (event) => {
+  //   if (event.animationName === "fade-out") {
+  //     setIsAnimating(false);
+  //     setTimeout(() => {
+  //       setIsRendered(false);
+  //       // const container = document.querySelector(".container");
+  //       // if (container) {
+  //       //   container.style.display = "none";
+  //       //   container.style.visibility = "hidden";
+  //       // }
+  //     }, 2000);
+  //   }
+  // };
 
   if (isRendered) {
     return (
       <div
-        className={`container ${
-          selectedAuthor && isAnimating ? "fade-out" : ""
-        }`}
+        className={`container ${selectedAuthor ? "fade-out" : ""}`}
         id="home"
-        onAnimationEnd={() => setIsAnimating(false)}>
+        // onAnimationEnd={handleAnimationEnd}
+      >
         <h1 className={`intro ${slideIntro ? "slide-up" : ""}`}>mi poemario</h1>
         {showAuthorList && (
           <div className="author-list">
@@ -135,14 +149,12 @@ function App() {
       className="main-container"
       {...WheelReact.events}
       {...SwipeReact.events}>
-      <a href="home">
+      <a href="https://mipoemario.com/">
         <h1 className="main-title">mi poemario</h1>
       </a>
 
       <div className="content">
-        {isPoemSelected && selectedPoem ? (
-          <h2 className="poem-author">{selectedPoem.author}</h2>
-        ) : null}
+        <h2 className="poem-author">{selectedAuthor}</h2>
 
         <nav className="poem-navbar">
           <PoemNav
