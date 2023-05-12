@@ -67,7 +67,7 @@ a {
 }
 
 .container.fade-out {
-  animation: fade-out 5s;
+  animation: fade-out 2s;
 }
 
 @keyframes fade-in {
@@ -133,8 +133,8 @@ a {
 #root {
   display: flex;
   justify-content: center;
-  /* align-items: center; */
-  /* height: 100vh; */
+  align-items: center;
+  height: 100vh;
 }
 
 .main-container {
@@ -188,11 +188,6 @@ a {
   transition: all 0.9s ease-in-out;
   cursor: pointer;
 }
-
-/* .poem-number:focus {
-  font-weight: 700;
-  color: var(--main-color-500);
-} */
 
 /* MEDIA QUERY PLACED HERE FOR THE HOVER AND ACTIVE */
 
@@ -387,6 +382,12 @@ footer {
     padding-top: 0.5rem;
   }
 
+  .content {
+    grid-template-columns: 5rem auto;
+    grid-template-rows: 5rem auto;
+    justify-content: center;
+  }
+
   .poem-number {
     font-size: 1.44rem;
   }
@@ -395,11 +396,10 @@ footer {
     font-weight: 700;
     color: var(--main-color-500);
   }
+
   .select,
   .poem {
-    margin-left: 1rem;
-  }
-  .poem {
+    width: 70vw;
     height: 80vh;
   }
 
