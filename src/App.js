@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Poem from "./components/Poem";
 import PoemNav from "./components/PoemNav";
 import { poems } from "./poems/poems";
-import WheelReact from "wheel-react";
+// import WheelReact from "wheel-react";
 import SwipeReact from "swipe-react";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
 import Footer from "./components/Footer";
@@ -17,6 +17,7 @@ function App() {
   const poemContainerRef = useRef(null);
   const [isPoemSelected, setIsPoemSelected] = useState(false);
   const [isRendered, setIsRendered] = useState(true);
+  // eslint-disable-next-line
   const [isAnimating, setIsAnimating] = useState(false);
   const [filteredPoems, setFilteredPoems] = useState([]);
 
@@ -25,6 +26,11 @@ function App() {
 
     setTimeout(() => {
       setSlideIntro(true);
+
+      setTimeout(() => {
+        document.querySelector(".intro").classList.add("block");
+        document.querySelector(".intro").classList.remove("slide-up");
+      }, 2000);
     }, 2000);
 
     setTimeout(() => {
@@ -90,6 +96,9 @@ function App() {
       setIsRendered(false);
       setIsAnimating(true);
     }, 2000);
+    setTimeout(() => {
+      setShowAuthorList(false);
+    }, 500);
   };
 
   // Define here because filteredPoems is declared in the handleAuthorSelect function
@@ -103,86 +112,128 @@ function App() {
     setIsPoemSelected(true);
   };
 
-  if (isRendered) {
-    return (
-      <div
-        className={`container ${selectedAuthor ? "fade-out" : ""}`}
-        id="home"
-        // onAnimationEnd={() => setIsAnimating(false)}
-      >
-        <h1 className={`intro ${slideIntro ? "slide-up" : ""}`}>mi poemario</h1>
-        {showAuthorList && (
-          <div className="author-list">
-            <button
-              className="author-select"
-              onClick={() => handleAuthorSelect("Ricardo Domínguez")}>
-              Amanok
-            </button>
-            <button
-              className="author-select"
-              onClick={() => handleAuthorSelect("Priscilla")}>
-              Priscilla
-            </button>
-            <button
-              className="author-select"
-              onClick={() => handleAuthorSelect("Rafael")}>
-              Rafael
-            </button>
-          </div>
-        )}
-      </div>
-    );
-  }
-
   return (
     <div
-      className="main-container"
-      {...WheelReact.events}
-      {...SwipeReact.events}>
-      <a href="https://mipoemario.com/">
-        <h1 className="main-title">mi poemario</h1>
+      className="container"
+      id="home"
+      // onAnimationEnd={() => setIsAnimating(false)}
+    >
+      <a
+        href="https://mipoemario.com/"
+        className={`intro ${slideIntro ? "slide-up" : ""}`}>
+        mi poemario
       </a>
 
-      <div className="content">
-        <h2 className="poem-author">{selectedAuthor}</h2>
+      {showAuthorList && (
+        <div className={`author-list ${selectedAuthor ? "fade-out" : ""}`}>
+          <button
+            className="author-select"
+            onClick={() => handleAuthorSelect("Ricardo Domínguez")}>
+            Amanok
+          </button>
+          <button
+            className="author-select"
+            onClick={() => handleAuthorSelect("Priscilla")}>
+            Priscilla
+          </button>
+          <button
+            className="author-select"
+            onClick={() => handleAuthorSelect("Rafael")}>
+            Rafael
+          </button>
+        </div>
+      )}
+      {!isRendered && (
+        <>
+          <div className="content">
+            <h2 className="poem-author">{selectedAuthor}</h2>
 
-        <nav className="poem-navbar">
-          <PoemNav
-            poems={filteredPoems}
-            handlePoemSelect={handlePoemSelect}
-            selectedPoemIndex={selectedPoemIndex}
-            selectedPoem={selectedPoem}
-          />
-        </nav>
-
-        {isPoemSelected && selectedPoem ? (
-          <SwitchTransition>
-            <CSSTransition
-              classNames="fade"
-              key={selectedPoemIndex}
-              addEndListener={(node, done) =>
-                node.addEventListener("transitionend", done, false)
-              }>
-              <Poem
-                title={selectedPoem.title}
-                text={selectedPoem.text}
-                author={selectedPoem.author}
-                poemContainerRef={poemContainerRef}
-                isPoemSelected={isPoemSelected}
+            <nav className="poem-navbar">
+              <PoemNav
+                poems={filteredPoems}
+                handlePoemSelect={handlePoemSelect}
+                selectedPoemIndex={selectedPoemIndex}
+                selectedPoem={selectedPoem}
               />
-            </CSSTransition>
-          </SwitchTransition>
-        ) : (
-          <div className="select">
-            <h1 className="select-title">
-              Escoge un poema del menú a la izquierda
-            </h1>
+            </nav>
+
+            {isPoemSelected && selectedPoem ? (
+              <SwitchTransition>
+                <CSSTransition
+                  classNames="fade"
+                  key={selectedPoemIndex}
+                  addEndListener={(node, done) =>
+                    node.addEventListener("transitionend", done, false)
+                  }>
+                  <Poem
+                    title={selectedPoem.title}
+                    text={selectedPoem.text}
+                    author={selectedPoem.author}
+                    poemContainerRef={poemContainerRef}
+                    isPoemSelected={isPoemSelected}
+                  />
+                </CSSTransition>
+              </SwitchTransition>
+            ) : (
+              <div className="select">
+                <h1 className="select-title">
+                  Escoge un poema del menú a la izquierda
+                </h1>
+              </div>
+            )}
           </div>
-        )}
-      </div>
-      <Footer />
+          <Footer />
+        </>
+      )}
     </div>
   );
+
+  // return (
+  //   <div className="container" {...WheelReact.events} {...SwipeReact.events}>
+  //     <a href="https://mipoemario.com/">
+  //       <h1 className="main-title">mi poemario</h1>
+  //     </a>
+
+  //     <div className="content">
+  //       <h2 className="poem-author">{selectedAuthor}</h2>
+
+  //       <nav className="poem-navbar">
+  //         <PoemNav
+  //           poems={filteredPoems}
+  //           handlePoemSelect={handlePoemSelect}
+  //           selectedPoemIndex={selectedPoemIndex}
+  //           selectedPoem={selectedPoem}
+  //         />
+  //       </nav>
+
+  //       {isPoemSelected && selectedPoem ? (
+  //         <SwitchTransition>
+  //           <CSSTransition
+  //             classNames="fade"
+  //             key={selectedPoemIndex}
+  //             addEndListener={(node, done) =>
+  //               node.addEventListener("transitionend", done, false)
+  //             }>
+  //             <Poem
+  //               title={selectedPoem.title}
+  //               text={selectedPoem.text}
+  //               author={selectedPoem.author}
+  //               poemContainerRef={poemContainerRef}
+  //               isPoemSelected={isPoemSelected}
+  //             />
+  //           </CSSTransition>
+  //         </SwitchTransition>
+  //       ) : (
+  //         <div className="select">
+  //           <h1 className="select-title">
+  //             Escoge un poema del menú a la izquierda
+  //           </h1>
+  //         </div>
+  //       )}
+  //     </div>
+  //     <Footer />
+  //   </div>
+  // );
 }
 
 export default App;
