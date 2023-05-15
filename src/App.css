@@ -53,6 +53,7 @@ em {
 
 a {
   text-decoration: none;
+  color: none;
 }
 
 /* container for intro text */
@@ -66,25 +67,12 @@ a {
   animation: fade-in 5s;
 }
 
-.container.fade-out {
-  animation: fade-out 2s;
-}
-
 @keyframes fade-in {
   from {
     opacity: 0;
   }
   to {
     opacity: 1;
-  }
-}
-
-@keyframes fade-out {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
   }
 }
 
@@ -103,6 +91,11 @@ a {
   top: 10%;
 }
 
+.intro.block {
+  position: relative;
+  top: -25%;
+}
+
 @keyframes slideup {
   0% {
     transform: translateY(100%);
@@ -116,6 +109,20 @@ a {
   display: flex;
   flex-direction: column;
   animation: fadein 2s;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.author-list.fade-out {
+  opacity: 0;
+}
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 .author-select {
@@ -154,6 +161,7 @@ a {
   grid-template-columns: 7rem auto;
   grid-template-rows: 5rem auto;
   padding-top: 2rem;
+  animation: fadein 2s;
 }
 
 .poem-author {
