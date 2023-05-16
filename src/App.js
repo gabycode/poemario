@@ -8,6 +8,7 @@ import { poems } from "./poems/poems";
 import SwipeReact from "swipe-react";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
 import Footer from "./components/Footer";
+import PoemTitleSelect from "./components/PoemTitleSelect";
 
 function App() {
   const [selectedPoemIndex, setSelectedPoemIndex] = useState(null);
@@ -17,8 +18,6 @@ function App() {
   const poemContainerRef = useRef(null);
   const [isPoemSelected, setIsPoemSelected] = useState(false);
   const [isRendered, setIsRendered] = useState(true);
-  // eslint-disable-next-line
-  const [isAnimating, setIsAnimating] = useState(false);
   const [filteredPoems, setFilteredPoems] = useState([]);
 
   useEffect(() => {
@@ -38,7 +37,7 @@ function App() {
       // setSelectedPoemIndex(null);
       if (poemContainerRef.current) {
         setSelectedPoemIndex((prevIndex) =>
-          prevIndex === poems.length - 1 ? prevIndex : prevIndex + 1
+          prevIndex === filteredPoems.length - 1 ? prevIndex : prevIndex + 1
         );
       }
     },
@@ -83,13 +82,11 @@ function App() {
 
   const handleAuthorSelect = (author) => {
     setSelectedAuthor(author);
-    setIsAnimating(false);
     // setIsRendered(true);
     const authorPoems = poems.filter((poem) => poem.author === author);
     setFilteredPoems(authorPoems);
     setTimeout(() => {
       setIsRendered(false);
-      setIsAnimating(true);
     }, 2000);
     setTimeout(() => {
       setShowAuthorList(false);
@@ -107,17 +104,27 @@ function App() {
     setIsPoemSelected(true);
   };
 
+  const handleAuthorListPage = () => {
+    setShowAuthorList(true);
+    setSelectedAuthor(false);
+    setIsRendered(true);
+    setSelectedPoemIndex(null);
+  };
+
   return (
     <div
       className="container"
-      id="home"
-      // onAnimationEnd={() => setIsAnimating(false)}
-    >
-      <a
-        href="https://mipoemario.com/"
-        className={`intro ${slideIntro ? "slide-up" : ""}`}>
-        mi poemario
-      </a>
+      // {...WheelReact.events}
+      {...SwipeReact.events}>
+      {slideIntro ? (
+        <div onClick={handleAuthorListPage} className="intro slide-up">
+          <h1>mi poemario</h1>
+        </div>
+      ) : (
+        <div className={`intro ${slideIntro ? "slide-up" : ""}`}>
+          <h1>mi poemario</h1>
+        </div>
+      )}
 
       {showAuthorList && (
         <div className={`author-list ${selectedAuthor ? "fade-out" : ""}`}>
@@ -142,7 +149,6 @@ function App() {
         <>
           <div className="content">
             <h2 className="poem-author">{selectedAuthor}</h2>
-
             <nav className="poem-navbar">
               <PoemNav
                 poems={filteredPoems}
@@ -170,11 +176,10 @@ function App() {
                 </CSSTransition>
               </SwitchTransition>
             ) : (
-              <div className="select">
-                <h1 className="select-title">
-                  Escoge un poema del menú a la izquierda
-                </h1>
-              </div>
+              <PoemTitleSelect
+                poems={filteredPoems}
+                handlePoemSelect={handlePoemSelect}
+              />
             )}
             <Footer />
           </div>
