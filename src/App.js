@@ -26,11 +26,6 @@ function App() {
 
     setTimeout(() => {
       setSlideIntro(true);
-
-      setTimeout(() => {
-        document.querySelector(".intro").classList.add("block");
-        document.querySelector(".intro").classList.remove("slide-up");
-      }, 2000);
     }, 2000);
 
     setTimeout(() => {
@@ -181,59 +176,12 @@ function App() {
                 </h1>
               </div>
             )}
+            <Footer />
           </div>
-          <Footer />
         </>
       )}
     </div>
   );
-
-  // return (
-  //   <div className="container" {...WheelReact.events} {...SwipeReact.events}>
-  //     <a href="https://mipoemario.com/">
-  //       <h1 className="main-title">mi poemario</h1>
-  //     </a>
-
-  //     <div className="content">
-  //       <h2 className="poem-author">{selectedAuthor}</h2>
-
-  //       <nav className="poem-navbar">
-  //         <PoemNav
-  //           poems={filteredPoems}
-  //           handlePoemSelect={handlePoemSelect}
-  //           selectedPoemIndex={selectedPoemIndex}
-  //           selectedPoem={selectedPoem}
-  //         />
-  //       </nav>
-
-  //       {isPoemSelected && selectedPoem ? (
-  //         <SwitchTransition>
-  //           <CSSTransition
-  //             classNames="fade"
-  //             key={selectedPoemIndex}
-  //             addEndListener={(node, done) =>
-  //               node.addEventListener("transitionend", done, false)
-  //             }>
-  //             <Poem
-  //               title={selectedPoem.title}
-  //               text={selectedPoem.text}
-  //               author={selectedPoem.author}
-  //               poemContainerRef={poemContainerRef}
-  //               isPoemSelected={isPoemSelected}
-  //             />
-  //           </CSSTransition>
-  //         </SwitchTransition>
-  //       ) : (
-  //         <div className="select">
-  //           <h1 className="select-title">
-  //             Escoge un poema del menú a la izquierda
-  //           </h1>
-  //         </div>
-  //       )}
-  //     </div>
-  //     <Footer />
-  //   </div>
-  // );
 }
 
 export default App;
