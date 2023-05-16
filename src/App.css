@@ -40,20 +40,17 @@ h2 {
 }
 
 h1,
-h2 {
+h2,
+a {
   font-weight: 500;
   color: var(--main-color-500);
+  text-decoration: none;
 }
 
 p,
 strong,
 em {
   font-size: 1.5rem;
-}
-
-a {
-  text-decoration: none;
-  color: none;
 }
 
 /* container for intro text */
@@ -89,11 +86,6 @@ a {
 
 .slide-up {
   top: 10%;
-}
-
-.intro.block {
-  position: relative;
-  top: -25%;
 }
 
 @keyframes slideup {
@@ -157,10 +149,11 @@ a {
 }
 
 .content {
+  position: relative;
   display: grid;
+  top: 7%;
   grid-template-columns: 7rem auto;
-  grid-template-rows: 5rem auto;
-  padding-top: 2rem;
+  grid-template-rows: 5rem auto auto;
   animation: fadein 2s;
 }
 
@@ -213,9 +206,10 @@ a {
 .select {
   position: relative;
   overflow-y: scroll;
-  height: 60rem;
+  height: 70vh;
+  width: 30rem;
   grid-column: 2/-1;
-  grid-row: 2/-1;
+  grid-row: 2/3;
 }
 
 .poem {
@@ -379,6 +373,9 @@ footer {
   justify-content: center;
   font-size: 1.2rem;
   color: var(--neutral-color-20);
+  grid-row: 3/-1;
+  grid-column: 1/-1;
+  padding: 1rem 0;
 }
 
 @media (max-width: 435px) {
@@ -394,6 +391,7 @@ footer {
     grid-template-columns: 5rem auto;
     grid-template-rows: 5rem auto;
     justify-content: center;
+    top: 6%;
   }
 
   .poem-number {
@@ -408,7 +406,7 @@ footer {
   .select,
   .poem {
     width: 70vw;
-    height: 80vh;
+    height: 70vh;
   }
 
   .poem-text {
@@ -425,5 +423,20 @@ footer {
 
   .gradient {
     height: 10rem;
+  }
+}
+
+@media (max-height: 750px) {
+  .poem,
+  .select {
+    height: 80vh;
+  }
+  .content {
+    top: 10%;
+  }
+}
+@media (max-height: 650px) {
+  .content {
+    top: 13%;
   }
 }
