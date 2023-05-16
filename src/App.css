@@ -1,6 +1,9 @@
 :root {
   --secondary-color-500: #2c3639;
   --main-color-500: #f8bb5f;
+  --main-color-400: #f9c97f;
+  --main-color-300: #fbd69f;
+  --main-color-200: #fbd69f;
   --main-color-100: #fef1df;
   --neutral-color-700: #a4a4a4;
   --neutral-color-20: rgba(254, 241, 223, 0.2);
@@ -40,11 +43,9 @@ h2 {
 }
 
 h1,
-h2,
-a {
+h2 {
   font-weight: 500;
   color: var(--main-color-500);
-  text-decoration: none;
 }
 
 p,
@@ -82,6 +83,7 @@ em {
   font-size: 2.8rem;
   font-weight: 700;
   white-space: nowrap;
+  cursor: pointer;
 }
 
 .slide-up {
@@ -149,12 +151,11 @@ em {
 }
 
 .content {
-  position: relative;
   display: grid;
-  top: 7%;
-  grid-template-columns: 7rem auto;
+  grid-template-columns: 4rem 30rem;
   grid-template-rows: 5rem auto auto;
   animation: fadein 2s;
+  height: 70%;
 }
 
 .poem-author {
@@ -185,7 +186,7 @@ em {
   text-align: center;
   color: var(--neutral-color-20);
   border: none;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.4rem;
   transition: all 0.9s ease-in-out;
   cursor: pointer;
 }
@@ -210,10 +211,19 @@ em {
   width: 30rem;
   grid-column: 2/-1;
   grid-row: 2/3;
+  animation: fade-out 1;
 }
 
 .poem {
   animation: fadein 2s;
+}
+
+.poem-title-select {
+  color: var(--main-color-200);
+  font-weight: 400;
+  font-size: 1.6rem;
+  margin-bottom: 0.4rem;
+  cursor: pointer;
 }
 
 @keyframes fadein {
@@ -320,14 +330,9 @@ em {
   top: -1px;
 }
 
-.poem-title,
-.select-title {
+.poem-title {
   font-weight: 700;
   padding-bottom: 1rem;
-}
-
-.select-title {
-  font-size: 2rem;
 }
 
 .poem-text {
@@ -388,25 +393,24 @@ footer {
   }
 
   .content {
-    grid-template-columns: 5rem auto;
-    grid-template-rows: 5rem auto;
+    grid-template-columns: 4rem 22rem;
+    grid-template-rows: 4rem auto;
     justify-content: center;
-    top: 6%;
   }
 
-  .poem-number {
-    font-size: 1.44rem;
-  }
   .poem-number.active {
     margin-bottom: 0;
     font-weight: 700;
     color: var(--main-color-500);
   }
 
-  .select,
+  .select {
+    height: 100vh;
+  }
+
   .poem {
     width: 70vw;
-    height: 70vh;
+    height: 77vh;
   }
 
   .poem-text {
@@ -429,14 +433,12 @@ footer {
 @media (max-height: 750px) {
   .poem,
   .select {
-    height: 80vh;
-  }
-  .content {
-    top: 10%;
+    height: 85vh;
   }
 }
-@media (max-height: 650px) {
-  .content {
-    top: 13%;
+@media (max-height: 600px) {
+  .poem,
+  .select {
+    height: 85vh;
   }
 }
