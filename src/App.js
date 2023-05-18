@@ -169,6 +169,7 @@ function App() {
                   <Poem
                     title={selectedPoem.title}
                     text={selectedPoem.text}
+                    id={selectedPoem.id}
                     author={selectedPoem.author}
                     poemContainerRef={poemContainerRef}
                     isPoemSelected={isPoemSelected}
