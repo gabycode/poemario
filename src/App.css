@@ -186,7 +186,6 @@ em {
   text-align: center;
   color: var(--neutral-color-20);
   border: none;
-  margin-bottom: 0.4rem;
   transition: all 0.9s ease-in-out;
   cursor: pointer;
 }
@@ -222,7 +221,6 @@ em {
   color: var(--main-color-200);
   font-weight: 400;
   font-size: 1.6rem;
-  margin-bottom: 0.4rem;
   cursor: pointer;
 }
 
@@ -399,7 +397,6 @@ footer {
   }
 
   .poem-number.active {
-    margin-bottom: 0;
     font-weight: 700;
     color: var(--main-color-500);
   }
