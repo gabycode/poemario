@@ -8,7 +8,7 @@ const PoemTitleSelect = ({ poems, handlePoemSelect }) => {
             handlePoemSelect(index);
           }}
           className="poem-title-select">
-          {poem.title}
+          {poem.title !== "" ? poem.title : <>&nbsp;</>}
         </h2>
       ))}
     </div>
