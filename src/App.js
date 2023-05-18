@@ -1,6 +1,7 @@
 import "./App.css";
 import "./fonts.css";
 import { useEffect, useRef, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import Poem from "./components/Poem";
 import PoemNav from "./components/PoemNav";
 import { poems } from "./poems/poems";
@@ -19,6 +20,7 @@ function App() {
   const [isPoemSelected, setIsPoemSelected] = useState(false);
   const [isRendered, setIsRendered] = useState(true);
   const [filteredPoems, setFilteredPoems] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     document.addEventListener("keydown", detectKeyDown, true);
@@ -109,6 +111,8 @@ function App() {
     setSelectedAuthor(false);
     setIsRendered(true);
     setSelectedPoemIndex(null);
+
+    navigate("/");
   };
 
   return (
@@ -128,21 +132,24 @@ function App() {
 
       {showAuthorList && (
         <div className={`author-list ${selectedAuthor ? "fade-out" : ""}`}>
-          <button
+          <Link
+            to="/amanok"
             className="author-select"
             onClick={() => handleAuthorSelect("Ricardo Domínguez")}>
             Amanok
-          </button>
-          <button
+          </Link>
+          <Link
+            to="/priscilla"
             className="author-select"
             onClick={() => handleAuthorSelect("Priscilla")}>
             Priscilla
-          </button>
-          <button
+          </Link>
+          <Link
+            to="/rafael"
             className="author-select"
             onClick={() => handleAuthorSelect("Rafael")}>
             Rafael
-          </button>
+          </Link>
         </div>
       )}
       {!isRendered && (
