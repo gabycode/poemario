@@ -1,7 +1,6 @@
 import "./App.css";
 import "./fonts.css";
 import { useEffect, useRef, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
 import Poem from "./components/Poem";
 import PoemNav from "./components/PoemNav";
 import { poems } from "./poems/poems";
@@ -18,9 +17,9 @@ function App() {
   const [showAuthorList, setShowAuthorList] = useState(false);
   const poemContainerRef = useRef(null);
   const [isPoemSelected, setIsPoemSelected] = useState(false);
+  // const [isMainTitleClicked, setIsMainTitleClicked] = useState(false);
   const [isRendered, setIsRendered] = useState(true);
   const [filteredPoems, setFilteredPoems] = useState([]);
-  const navigate = useNavigate();
 
   useEffect(() => {
     document.addEventListener("keydown", detectKeyDown, true);
@@ -111,8 +110,6 @@ function App() {
     setSelectedAuthor(false);
     setIsRendered(true);
     setSelectedPoemIndex(null);
-
-    navigate("/");
   };
 
   return (
@@ -132,24 +129,21 @@ function App() {
 
       {showAuthorList && (
         <div className={`author-list ${selectedAuthor ? "fade-out" : ""}`}>
-          <Link
-            to="/amanok"
+          <button
             className="author-select"
             onClick={() => handleAuthorSelect("Ricardo Domínguez")}>
             Amanok
-          </Link>
-          <Link
-            to="/priscilla"
+          </button>
+          <button
             className="author-select"
             onClick={() => handleAuthorSelect("Priscilla")}>
             Priscilla
-          </Link>
-          <Link
-            to="/rafael"
+          </button>
+          <button
             className="author-select"
             onClick={() => handleAuthorSelect("Rafael")}>
             Rafael
-          </Link>
+          </button>
         </div>
       )}
       {!isRendered && (
@@ -184,10 +178,20 @@ function App() {
                 </CSSTransition>
               </SwitchTransition>
             ) : (
-              <PoemTitleSelect
-                poems={filteredPoems}
-                handlePoemSelect={handlePoemSelect}
-              />
+              <SwitchTransition>
+                <CSSTransition
+                  classNames="fade"
+                  key={selectedPoemIndex}
+                  addEndListener={(node, done) =>
+                    node.addEventListener("transitionend", done, false)
+                  }>
+                  <PoemTitleSelect
+                    poems={filteredPoems}
+                    handlePoemSelect={handlePoemSelect}
+                    isPoemSelected={isPoemSelected}
+                  />
+                </CSSTransition>
+              </SwitchTransition>
             )}
             <Footer />
           </div>
