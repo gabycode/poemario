@@ -115,14 +115,6 @@ a {
 .author-list.fade-out {
   opacity: 0;
 }
-@keyframes fade-out {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
 
 .author-select {
   cursor: pointer;
@@ -161,6 +153,14 @@ a {
   grid-template-rows: 5rem auto auto;
   animation: fadein 2s;
   height: 70%;
+}
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 .poem-author {
@@ -396,7 +396,6 @@ footer {
   }
 
   .content {
-    grid-template-columns: 4rem 22rem;
     grid-template-rows: 4rem auto;
     justify-content: center;
   }
@@ -429,6 +428,12 @@ footer {
 
   .gradient {
     height: 10rem;
+  }
+}
+
+@media (max-width: 340px) {
+  .content {
+    grid-template-columns: 4rem 22rem;
   }
 }
 
