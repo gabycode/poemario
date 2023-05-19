@@ -9,6 +9,8 @@ import SwipeReact from "swipe-react";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
 import Footer from "./components/Footer";
 import PoemTitleSelect from "./components/PoemTitleSelect";
+import AuthorList from "./components/AuthorList";
+import Home from "./components/Home";
 
 function App() {
   const [selectedPoemIndex, setSelectedPoemIndex] = useState(null);
@@ -117,35 +119,17 @@ function App() {
       className="container"
       // {...WheelReact.events}
       {...SwipeReact.events}>
-      {slideIntro ? (
-        <div onClick={handleAuthorListPage} className="intro slide-up">
-          <h1>mi poemario</h1>
-        </div>
-      ) : (
-        <div className={`intro ${slideIntro ? "slide-up" : ""}`}>
-          <h1>mi poemario</h1>
-        </div>
-      )}
+      <Home
+        slideIntro={slideIntro}
+        handleAuthorListPage={handleAuthorListPage}
+      />
 
-      {showAuthorList && (
-        <div className={`author-list ${selectedAuthor ? "fade-out" : ""}`}>
-          <button
-            className="author-select"
-            onClick={() => handleAuthorSelect("Ricardo Domínguez")}>
-            Amanok
-          </button>
-          <button
-            className="author-select"
-            onClick={() => handleAuthorSelect("Priscilla")}>
-            Priscilla
-          </button>
-          <button
-            className="author-select"
-            onClick={() => handleAuthorSelect("Rafael")}>
-            Rafael
-          </button>
-        </div>
-      )}
+      <AuthorList
+        selectedAuthor={selectedAuthor}
+        showAuthorList={showAuthorList}
+        handleAuthorSelect={handleAuthorSelect}
+      />
+
       {!isRendered && (
         <>
           <div className="content">
@@ -202,3 +186,21 @@ function App() {
 }
 
 export default App;
+
+{
+  /* <Home
+        slideIntro={slideIntro}
+        handleAuthorListPage={handleAuthorListPage}
+      />
+      <AuthorList
+        selectedAuthor={selectedAuthor}
+        showAuthorList={showAuthorList}
+        handleAuthorSelect={handleAuthorSelect}
+      />
+      <PoemTitleSelect
+        poems={filteredPoems}
+        handlePoemSelect={handlePoemSelect}
+        isPoemSelected={isPoemSelected}
+        selectedPoemIndex={selectedPoemIndex}
+      /> */
+}
